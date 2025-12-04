@@ -33,32 +33,32 @@ export default function Education() {
 
   const innovationFeatures = [
     {
-      icon: '✓',
+      icon: '✔',
       title: 'Interactive Content',
       description: 'Engaging multimedia lessons with videos, quizzes, and interactive exercises.'
     },
     {
-      icon: '✓',
+      icon: '✔',
       title: 'Live Classes',
       description: 'Real-time virtual classrooms with video conferencing and collaboration tools.'
     },
     {
-      icon: '✓',
+      icon: '✔',
       title: 'Progress Tracking',
       description: 'Comprehensive analytics and reporting on student performance and engagement.'
     },
     {
-      icon: '✓',
+      icon: '✔',
       title: 'Gamification',
       description: 'Badges, leaderboards, and rewards to motivate and engage learners.'
     },
     {
-      icon: '✓',
+      icon: '✔',
       title: 'Assessment Tools',
       description: 'Automated quizzes, assignments, and grading with instant feedback.'
     },
     {
-      icon: '✓',
+      icon: '✔',
       title: 'Social Learning',
       description: 'Discussion forums, peer collaboration, and community features.'
     }
@@ -269,7 +269,11 @@ export default function Education() {
               </Link>
             </div>
             <div className={styles.finalCTARight}>
-              <img src="/education-cta.jpg" alt="Education App Development" className={styles.finalCTAImage} />
+              <img 
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop" 
+                alt="Education App Development" 
+                className={styles.finalCTAImage} 
+              />
             </div>
           </div>
         </div>
