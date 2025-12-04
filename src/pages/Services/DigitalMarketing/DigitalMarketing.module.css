@@ -1,0 +1,892 @@
+/* ==========================================
+   DIGITAL MARKETING - SHARED CSS MODULE
+   Used by all Digital Marketing pages
+   ========================================== */
+
+   .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* ==========================================
+     SECTION HEADERS
+     ========================================== */
+  
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* ==========================================
+     WHY CHOOSE US SECTION (WITH TABS)
+     ========================================== */
+  
+  .whyChooseSection {
+    padding: 6rem 0;
+    background: var(--white);
+  }
+  
+  .whyChooseGrid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  .tabsColumn {
+    position: sticky;
+    top: 100px;
+  }
+  
+  .tabsWrapper {
+    position: relative;
+    display: flex;
+    gap: 0;
+    margin-top: 2rem;
+  }
+  
+  .tabsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  
+  .tabButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .tabButton:hover {
+    background: var(--hover-bg);
+    color: var(--primary);
+  }
+  
+  .tabButton.active {
+    color: var(--primary);
+    background: rgba(255, 125, 40, 0.05);
+  }
+  
+  .tabIcon {
+    font-size: 1.5rem;
+  }
+  
+  .divider {
+    position: relative;
+    width: 3px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin: 0 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .contentColumn {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    min-height: 400px;
+  }
+  
+  .tabContent {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contentTitle {
+    font-size: 2rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .contentDescription {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  
+  .checkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  /* ==========================================
+     SERVICES GRID SECTION
+     ========================================== */
+  
+  .servicesGridSection {
+    padding: 6rem 0;
+    background: var(--card-bg);
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .serviceCard {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .serviceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+  }
+  
+  .serviceIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .serviceTitle {
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .serviceDescription {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+  
+  .serviceArrow {
+    font-size: 1.5rem;
+    color: var(--primary);
+    align-self: flex-end;
+    transition: transform 0.3s ease;
+  }
+  
+  .serviceCard:hover .serviceArrow {
+    transform: translateX(5px);
+  }
+  
+  /* ==========================================
+     PROCESS SECTION
+     ========================================== */
+  
+  .processSection {
+    padding: 6rem 0;
+    background: var(--dark-bg);
+    color: var(--white);
+  }
+  
+  .processSection .sectionTitle {
+    color: var(--white);
+  }
+  
+  .processSection .sectionSubtitle {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .processGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .processCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .processCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .processNumber {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+  
+  .processTitle {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .processDescription {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+  
+  /* ==========================================
+     FEATURES SECTION
+     ========================================== */
+  
+  .featuresSection {
+    padding: 6rem 0;
+    background: var(--white);
+  }
+  
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .featureCard {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary);
+  }
+  
+  .featureIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .featureDescription {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  
+  /* ==========================================
+     SERVICES DETAIL SECTION
+     ========================================== */
+  
+  .servicesDetailSection {
+    padding: 6rem 0;
+    background: var(--card-bg);
+  }
+  
+  .servicesDetailGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .serviceDetailCard {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .serviceDetailCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary);
+  }
+  
+  .serviceDetailIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .serviceDetailTitle {
+    font-size: 1.25rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .serviceDetailDescription {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  
+  /* ==========================================
+     PLATFORMS SECTION
+     ========================================== */
+  
+  .platformsSection {
+    padding: 6rem 0;
+    background: var(--white);
+  }
+  
+  .platformsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .platformCard {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .platformCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary);
+  }
+  
+  .platformIconLarge {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .platformName {
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .platformDescription {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  
+  /* ==========================================
+     TWO COLUMN CONTENT SECTION
+     ========================================== */
+  
+  .twoColumnSection {
+    padding: 6rem 0;
+    background: var(--white);
+  }
+  
+  .twoColumnGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .contentColumn {
+    padding: 0;
+  }
+  
+  .columnTitle {
+    font-size: 2rem;
+    color: var(--text-heading);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .columnText {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .columnStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .statItem {
+    text-align: center;
+  }
+  
+  .statNumber {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .statLabel {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .imageColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imagePlaceholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+  
+  .imageIcon {
+    font-size: 8rem;
+    opacity: 0.3;
+  }
+  
+  /* ==========================================
+     PROCESS TIMELINE (Interactive)
+     ========================================== */
+  
+  .processTimeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .processStep {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .processStep:hover,
+  .processStep.activeStep {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    transform: translateX(10px);
+  }
+  
+  .processStepHeader {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .processStepNumber {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 60px;
+  }
+  
+  .processStepTitle {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .processStepDescription {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding-left: 75px;
+  }
+  
+  .processActivities {
+    list-style: none;
+    padding: 0;
+    padding-left: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .activityItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+  
+  .activityBullet {
+    color: var(--primary);
+    font-weight: bold;
+  }
+  
+  /* ==========================================
+     FINAL CTA SECTION
+     ========================================== */
+  
+  .finalCTA {
+    padding: 6rem 0;
+    background: var(--dark-bg);
+    color: var(--white);
+  }
+  
+  .ctaGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .ctaContent {
+    padding-right: 2rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .ctaDescription {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .ctaButtons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 2.5rem;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 125, 40, 0.4);
+  }
+  
+  .ctaButtonSecondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+  }
+  
+  .ctaButtonSecondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+  }
+  
+  .buttonArrow {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .ctaButton:hover .buttonArrow {
+    transform: translateX(5px);
+  }
+  
+  .ctaImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ctaImagePlaceholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(255, 125, 40, 0.2) 0%, rgba(42, 54, 71, 0.3) 100%);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .ctaImageIcon {
+    font-size: 8rem;
+    opacity: 0.4;
+  }
+  
+  /* ==========================================
+     RESPONSIVE DESIGN
+     ========================================== */
+  
+  @media (max-width: 1024px) {
+    .whyChooseGrid {
+      grid-template-columns: 350px 1fr;
+      gap: 3rem;
+    }
+  
+    .contentColumn {
+      padding: 2.5rem;
+    }
+  
+    .twoColumnGrid {
+      gap: 3rem;
+    }
+  
+    .ctaGrid {
+      gap: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  
+    .sectionTitle {
+      font-size: 2rem;
+    }
+  
+    .sectionSubtitle {
+      font-size: 1rem;
+    }
+  
+    .whyChooseSection,
+    .featuresSection,
+    .processSection,
+    .servicesGridSection,
+    .servicesDetailSection,
+    .platformsSection,
+    .twoColumnSection,
+    .finalCTA {
+      padding: 4rem 0;
+    }
+  
+    .sectionHeader {
+      margin-bottom: 3rem;
+    }
+  
+    .whyChooseGrid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .tabsColumn {
+      position: static;
+    }
+  
+    .twoColumnGrid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .columnStats {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  
+    .statNumber {
+      font-size: 2rem;
+    }
+  
+    .ctaGrid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .ctaContent {
+      padding-right: 0;
+    }
+  
+    .ctaTitle {
+      font-size: 2rem;
+    }
+  
+    .ctaDescription {
+      font-size: 1rem;
+    }
+  
+    .servicesGrid,
+    .featuresGrid,
+    .platformsGrid,
+    .processGrid,
+    .servicesDetailGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .imagePlaceholder,
+    .ctaImagePlaceholder {
+      height: 300px;
+    }
+  
+    .imageIcon,
+    .ctaImageIcon {
+      font-size: 6rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+  
+    .sectionTitle {
+      font-size: 1.75rem;
+    }
+  
+    .sectionSubtitle {
+      font-size: 0.9375rem;
+    }
+  
+    .contentTitle {
+      font-size: 1.5rem;
+    }
+  
+    .contentDescription {
+      font-size: 1rem;
+    }
+  
+    .columnTitle {
+      font-size: 1.5rem;
+    }
+  
+    .columnText {
+      font-size: 1rem;
+    }
+  
+    .columnStats {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .ctaButtons {
+      flex-direction: column;
+    }
+  
+    .ctaButton,
+    .ctaButtonSecondary {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .featureCard,
+    .serviceCard,
+    .platformCard,
+    .processCard,
+    .serviceDetailCard {
+      padding: 2rem;
+    }
+  }

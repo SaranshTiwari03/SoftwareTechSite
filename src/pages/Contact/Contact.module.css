@@ -1,0 +1,399 @@
+.contactPage {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 8rem 0 5rem 0;
+  min-height: 600px;
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+}
+
+.heroContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.leftContent {
+  color: var(--white);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+.breadcrumbLink {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.breadcrumbLink:hover {
+  color: var(--primary);
+}
+
+.breadcrumbCurrent {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.breadcrumbSeparator {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  animation: arrowSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  font-family: var(--font-family);
+}
+
+.description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 2rem 0;
+  max-width: 700px;
+  font-family: var(--font-family);
+}
+
+/* Hero Image - NEW */
+.heroImage {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  object-fit: cover;
+}
+
+/* Form Container */
+.formContainer {
+  position: sticky;
+  top: 100px;
+}
+
+.formCard {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0 0 2rem 0;
+  text-align: center;
+  line-height: 1.3;
+  font-family: var(--font-family);
+}
+
+.formTitleOrange {
+  color: var(--primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  background: transparent;
+  color: var(--text);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-bottom-color: var(--primary);
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.submitButton {
+  width: 100%;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+  font-family: var(--font-family);
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #c3e6cb;
+  font-family: var(--font-family);
+}
+
+.errorMessage {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #f5c6cb;
+  font-family: var(--font-family);
+}
+
+.privacyText {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  font-family: var(--font-family);
+}
+
+.privacyLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacyLink:hover {
+  text-decoration: underline;
+}
+
+/* Services Cards Section */
+.cardsSection {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.cardsContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.categoryBlock {
+  margin-bottom: 4rem;
+}
+
+.categoryBlock:last-child {
+  margin-bottom: 0;
+}
+
+.categoryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0 0 2rem 0;
+  font-family: var(--font-family);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.serviceCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  background: var(--card-bg);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.serviceCard:hover {
+  background: var(--white);
+  border-color: var(--primary);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.serviceName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary);
+  font-family: var(--font-family);
+  flex: 1;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .formContainer {
+    position: static;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .heroImage {
+    max-width: 100%;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 6rem 0 3rem 0;
+  }
+
+  .heroContainer {
+    padding: 0 20px;
+  }
+
+  .cardsContainer {
+    padding: 0 20px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+
+  .heroImage {
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .categoryTitle {
+    font-size: 1.75rem;
+  }
+
+  .cardsSection {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .heroImage {
+    border-radius: 10px;
+    max-width: 100%;
+  }
+
+  .formCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .formTitle {
+    font-size: 1.6rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+}

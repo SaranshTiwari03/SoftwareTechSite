@@ -1,0 +1,59 @@
+:root {
+  --primary: #FF7D28;
+  --primary-hover: #e16f20;
+  --secondary: #2A3647;
+  --background: #fff;
+  --text: #1a1f2e;
+  --text-heading: #2A3647;
+  --text-heading-dark: #1f2937;
+  --text-light: #4b5563;
+  --text-muted: #6b7280;
+  --text-link: #5a6576;
+  --text-arrow: #888;
+  --text-fallback: #333;
+  --white: #ffffff;
+  --black: #000000;
+  --card-bg: #F8F8F9;
+  --hover-bg: #f9f9f9;
+  --dark-bg: #2A3647;
+  --dark-bg-deep: #1a2332;
+  --border-color: #e5e7eb;
+  --border-light: #f0f0f0;
+  --border-lighter: #eee;
+  --border-radius: 14px;
+  --font-family: 'Inter', 'Segoe UI', 'Roboto', 'Poppins', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+  font-family: var(--font-family);
+}
+
+p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0.8rem 2.2rem;
+  background-color: var(--primary);
+  color: white;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-family);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}

@@ -1,0 +1,701 @@
+/* =============================================
+   CUSTOM SOFTWARE DEVELOPMENT - SHARED STYLES
+   Used by: CustomSoftwareMain, CRMSolution, ERPSolution, CMSSolution
+   ============================================= */
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Section Headers */
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-family: var(--font-family);
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  .highlight {
+    color: var(--primary);
+  }
+  
+  /* =============================================
+     SECTION 1: WHY CHOOSE US WITH TABS (WHITE)
+     ============================================= */
+  .whyChooseSection {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+  
+  .tabsContainer {
+    display: grid;
+    grid-template-columns: 250px 3px 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  
+  .tabsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tabButton {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-family: var(--font-family);
+  }
+  
+  .tabButton:hover {
+    background: var(--hover-bg);
+    color: var(--text-heading);
+  }
+  
+  .tabButton.active {
+    background: var(--hover-bg);
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  .divider {
+    position: relative;
+    width: 3px;
+    background: var(--border-color);
+    border-radius: 2px;
+  }
+  
+  .tabContent {
+    padding: 1rem 0;
+  }
+  
+  .tabPane {
+    animation: fadeIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .tabTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-family: var(--font-family);
+  }
+  
+  .tabDescription {
+    font-size: 1.0625rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .featureList li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .checkIcon {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .featureList li div {
+    flex: 1;
+  }
+  
+  .featureList li strong {
+    display: block;
+    font-size: 1.0625rem;
+    color: var(--text-heading);
+    margin-bottom: 0.25rem;
+    font-family: var(--font-family);
+  }
+  
+  .featureList li p {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  /* =============================================
+     SECTION 2: SERVICES GRID (GRAY)
+     ============================================= */
+  .servicesGridSection {
+    padding: 5rem 0;
+    background: var(--card-bg);
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .serviceCard {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .serviceCard:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .serviceIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .serviceIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .serviceTitle {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-family);
+  }
+  
+  .serviceDescription {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+  
+  .servicePrice {
+    font-size: 0.875rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .serviceArrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--text-arrow);
+    transition: all 0.3s ease;
+  }
+  
+  .serviceCard:hover .serviceArrow {
+    color: var(--primary);
+    transform: translateX(5px);
+  }
+  
+  /* =============================================
+     SECTION 3: PROCESS (DARK)
+     ============================================= */
+  .processSection {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+  }
+  
+  .processSection .sectionTitle,
+  .processSection .sectionSubtitle {
+    color: var(--white);
+  }
+  
+  .processGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .processCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .processCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+  }
+  
+  .processNumber {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-family);
+  }
+  
+  .processTitle {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-family);
+  }
+  
+  .processDescription {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  /* =============================================
+     SECTION 4: FEATURES GRID (WHITE/GRAY)
+     ============================================= */
+  .featuresSection {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+  
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .featureCard {
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .featureCard:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .featureCardIcon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .featureCardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-family);
+  }
+  
+  .featureCardDescription {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  /* =============================================
+     SECTION 5: TWO COLUMN CONTENT
+     ============================================= */
+  .twoColumnSection {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+  
+  .twoColumnGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  
+  .columnContent h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-family: var(--font-family);
+  }
+  
+  .columnContent p {
+    font-size: 1.0625rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .columnContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .columnContent ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .columnContent ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  
+  .columnImage {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .columnImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* =============================================
+     SECTION 6: TECH STACK (GRAY)
+     ============================================= */
+  .techStackSection {
+    padding: 5rem 0;
+    background: var(--card-bg);
+  }
+  
+  .techGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .techItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .techItem:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .techIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .techIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .techName {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    font-family: var(--font-family);
+  }
+  
+  /* =============================================
+     SECTION 7: FINAL CTA (DARK)
+     ============================================= */
+  .finalCTA {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+  }
+  
+  .finalCTA .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .ctaContent {
+    color: var(--white);
+  }
+  
+  .ctaTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-family);
+  }
+  
+  .ctaDescription {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .ctaButtons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .primaryButton {
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-family);
+  }
+  
+  .primaryButton:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 125, 40, 0.3);
+  }
+  
+  .secondaryButton {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-family);
+  }
+  
+  .secondaryButton:hover {
+    background: var(--white);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+  }
+  
+  .ctaImage {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .ctaImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* =============================================
+     RESPONSIVE DESIGN
+     ============================================= */
+  
+  /* Tablet Large */
+  @media (max-width: 1024px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  
+    .sectionTitle {
+      font-size: 2.25rem;
+    }
+  
+    .tabsContainer {
+      grid-template-columns: 220px 3px 1fr;
+      gap: 2rem;
+    }
+  
+    .twoColumnGrid,
+    .finalCTA .container {
+      gap: 3rem;
+    }
+  }
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .sectionTitle {
+      font-size: 2rem;
+    }
+  
+    .sectionSubtitle {
+      font-size: 1rem;
+    }
+  
+    .tabsContainer {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .tabsList {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 0.5rem;
+    }
+  
+    .tabButton {
+      white-space: nowrap;
+    }
+  
+    .divider {
+      display: none;
+    }
+  
+    .twoColumnGrid,
+    .finalCTA .container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .servicesGrid,
+    .processGrid,
+    .featuresGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .ctaTitle {
+      font-size: 2rem;
+    }
+  
+    .ctaButtons {
+      flex-direction: column;
+    }
+  
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+  
+    .sectionTitle {
+      font-size: 1.75rem;
+    }
+  
+    .sectionHeader {
+      margin-bottom: 2rem;
+    }
+  
+    .whyChooseSection,
+    .servicesGridSection,
+    .processSection,
+    .featuresSection,
+    .twoColumnSection,
+    .techStackSection,
+    .finalCTA {
+      padding: 3rem 0;
+    }
+  
+    .tabTitle {
+      font-size: 1.5rem;
+    }
+  
+    .serviceTitle,
+    .processTitle,
+    .featureCardTitle {
+      font-size: 1.25rem;
+    }
+  
+    .ctaTitle {
+      font-size: 1.75rem;
+    }
+  
+    .ctaImage,
+    .columnImage {
+      height: 250px;
+    }
+  }

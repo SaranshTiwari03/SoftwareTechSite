@@ -1,0 +1,592 @@
+/* Main sticky nav, overlays everything */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .24s, box-shadow .22s;
+  background: transparent;
+}
+
+.transparent {
+  background: rgba(255,255,255,0);
+  box-shadow: none;
+}
+
+.white {
+  background: var(--white);
+  box-shadow: 0px 2px 12px 0 rgba(40,44,63,0.085);
+  transition: background .22s, box-shadow .22s;
+}
+
+/* Centered content - INCREASED WIDTH AS REQUESTED */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+  position: relative;
+}
+
+/* Logo - improved size */
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 101;
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.white .hamburger span {
+  background-color: var(--text);
+}
+
+.hamburger span.hamburgerOpen:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger span.hamburgerOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger span.hamburgerOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+}
+
+.navItems {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+  font-weight: 600;
+}
+
+/* Nav links - BIGGER TEXT */
+.link {
+  color: var(--white) !important;
+  text-decoration: none;
+  padding: 0.6em 0.8em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  transition: color 0.17s;
+  display: block;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Black text when navbar is white/scrolled */
+.white .link {
+  color: var(--text) !important;
+}
+
+/* No background on hover - only color change */
+.link:hover {
+  color: var(--primary) !important;
+}
+
+/* Animated line - ONLY LINE ANIMATES, NOT THE TEXT */
+.link::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+/* Active page indicator line */
+.link.active::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Hover animation - line expands from center */
+.link:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Black indicator when navbar is white */
+.white .link.active::before,
+.white .link:hover::before {
+  background-color: var(--text);
+}
+
+/* Mega menu wrapper - positioned relative to navbar */
+.megaWrapper {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 0;
+  z-index: 120;
+}
+
+/* Mega menu container - KEPT ORIGINAL SIZE */
+.megaMenu {
+  background: var(--white);
+  box-shadow: 0 10px 44px rgba(40,44,63,.21);
+  border-radius: 0 0 22px 22px;
+  width: 1400px;
+  max-width: calc(100vw - 80px);
+  padding: 2.2rem 2rem 2.0rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+/* Image column on the LEFT */
+.megaImageCol {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  max-width: 320px;
+  padding-right: 2rem;
+  border-right: 1.5px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.imageContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-heading-dark);
+  margin: 0 0 0.8rem 0;
+  letter-spacing: 0.3px;
+}
+
+.imageDesc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+}
+
+.megaImage {
+  width: 100%;
+  max-width: 280px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-top: auto;
+}
+
+/* Content columns on the RIGHT */
+.megaContent {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.8rem 2.2rem;
+  width: 100%;
+}
+
+.megaCol {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.megaHeading {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-heading);
+  margin-bottom: .5rem;
+  margin-top: 0;
+  letter-spacing: .2px;
+  display: block;
+  text-decoration: none;
+  transition: color .15s;
+  cursor: pointer;
+}
+
+.megaHeading:hover { 
+  color: var(--primary); 
+}
+
+.megaLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.megaLinkRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.arrow {
+  font-size: 1.0em;
+  margin-right: .35em;
+  color: var(--text-arrow);
+  font-weight: 600;
+  transition: color .12s;
+  display: inline-block;
+}
+
+.megaLink {
+  color: var(--text-link);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: .92rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: background .16s, color .12s;
+  padding: 0.2em 0.4em;
+  font-weight: 400;
+}
+
+.megaLink:hover {
+  background: var(--card-bg);
+  color: var(--primary);
+}
+
+.megaLinkRow:hover .arrow {
+  color: var(--primary);
+}
+
+.megaDesc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+
+/* Desktop CTA button - IMPROVED STYLING */
+.button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.85rem 2.5rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 125, 40, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.button:hover { 
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 125, 40, 0.4);
+  color: var(--white);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.dropdownOverlay {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.1);
+  z-index: 80;
+  pointer-events: none;
+}
+
+/* Mobile Navigation Styles */
+.mobileNav {
+  display: none;
+  position: fixed;
+  top: 90px;
+  right: -100%;
+  width: 320px;
+  max-width: 85vw;
+  height: calc(100vh - 90px);
+  background: var(--white);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 99;
+}
+
+.mobileNavOpen {
+  right: 0;
+}
+
+.mobileNavItems {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.mobileNavItem {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mobileNavLink:hover {
+  background: var(--hover-bg);
+  color: var(--primary);
+}
+
+.mobileArrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.mobileArrowOpen {
+  transform: rotate(180deg);
+}
+
+.mobileSubmenu {
+  background: var(--hover-bg);
+  padding: 0.5rem 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.mobileSubmenuSection {
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--border-lighter);
+}
+
+.mobileSubmenuSection:last-child {
+  border-bottom: none;
+}
+
+.mobileSubmenuHeading {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-heading);
+  margin: 0.5rem 0;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobileSubmenuHeading:hover {
+  color: var(--primary);
+}
+
+.mobileSubmenuLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0;
+}
+
+.mobileSubmenuLink {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  color: var(--text-link);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.mobileSubmenuLink:hover {
+  color: var(--primary);
+}
+
+.mobileSubmenuDesc {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+.mobileButton {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 1rem 1.5rem;
+  width: calc(100% - 3rem);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 125, 40, 0.3);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.mobileButton:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 125, 40, 0.4);
+  color: var(--white);
+}
+
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  background: rgba(0,0,0,0.5);
+  z-index: 98;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 50px;
+  }
+  
+  .navItems {
+    gap: 1.2rem;
+  }
+  
+  .link {
+    font-size: 16px;
+    padding: 0.5em 0.6em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+  
+  .navItems {
+    gap: 1rem;
+  }
+  
+  .link {
+    font-size: 15px;
+    padding: 0.5em 0.5em;
+  }
+  
+  .button {
+    padding: 0.75rem 1.8rem;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .mobileNav {
+    display: block;
+  }
+  
+  .mobileOverlay {
+    display: block;
+  }
+  
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 48px;
+  }
+  
+  .mobileNav {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo img {
+    height: 42px;
+  }
+  
+  .mobileNav {
+    width: 100%;
+    max-width: 100vw;
+  }
+}

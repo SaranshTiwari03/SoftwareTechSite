@@ -1,0 +1,495 @@
+.aboutPage {
+    width: 100%;
+    padding-top: 0;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  /* Hero Banner Section */
+  .heroBanner {
+    background: linear-gradient(135deg, #2A3647 0%, #1a2332 100%);
+    padding: 140px 60px 80px 60px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heroContainer {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .heroContent {
+    max-width: 800px;
+  }
+  
+  .heroTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: white;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+  
+  .heroDescription {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+  
+  .heroFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .heroFeatures li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+  
+  .checkmark {
+    color: #FF7D28;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  /* Decorative elements */
+  .decorCircle1 {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #FF7D28, #e16f20);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .decorCircle2 {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #FF7D28, #e16f20);
+    border-radius: 30%;
+    opacity: 0.08;
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Mission Vision Values Section */
+  .mvvSection {
+    padding: 5rem 60px;
+    background: white;
+  }
+  
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .tabNavigation {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .tabButton {
+    background: none;
+    border: none;
+    border-radius: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    padding-bottom: 1.5rem;
+    cursor: pointer;
+    color: #2A3647;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: -0.5px;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -2px;
+  }
+  
+  .tabButton:hover {
+    color: #FF7D28;
+    background: none;
+    border-radius: 0;
+  }
+  
+  .activeTab {
+    color: #1a1f2e !important;
+    font-weight: 800;
+    border-bottom: 4px solid #FF7D28 !important;
+    background: none;
+    border-radius: 0 !important;
+  }
+  
+  .tabContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .contentLeft {
+    min-height: 400px;
+  }
+  
+  .fadeIn {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contentTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2A3647;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: -0.5px;
+  }
+  
+  .contentText {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #4b5563;
+    margin-bottom: 1.2rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .valueItem {
+    margin-bottom: 2rem;
+  }
+  
+  .valueTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2A3647;
+    margin-bottom: 0.6rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: -0.3px;
+  }
+  
+  .valueDesc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .contentRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contentImage {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Our Impact Section */
+  .impactSection {
+    padding: 5rem 60px;
+    background: #2A3647;
+    color: white;
+  }
+  
+  .impactGrid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .impactLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .impactIcon {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .impactTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: -0.5px;
+  }
+  
+  .impactSubtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FF7D28;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+  
+  .impactText {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  /* Stats Section */
+  .statsSection {
+    padding: 5rem 60px;
+    background: #F8F8F9;
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .statsLeft {
+    padding-right: 2rem;
+  }
+  
+  .statsTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2A3647;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: -0.5px;
+  }
+  
+  .statsSubtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FF7D28;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+  
+  .statsText {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #4b5563;
+    margin-bottom: 1rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .statsRight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .statCard {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .statCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .statNumber {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2A3647;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .statLabel {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.5;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .heroTitle {
+      font-size: 3rem;
+    }
+  
+    .contentTitle,
+    .statsTitle,
+    .impactTitle {
+      font-size: 2.2rem;
+    }
+  
+    .tabButton {
+      font-size: 2rem;
+    }
+  
+    .tabContent,
+    .statsGrid {
+      gap: 3rem;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .heroBanner {
+      padding: 120px 40px 60px 40px;
+    }
+  
+    .mvvSection,
+    .statsSection,
+    .impactSection {
+      padding: 4rem 40px;
+    }
+  
+    .heroTitle {
+      font-size: 2.5rem;
+    }
+  
+    .tabButton {
+      font-size: 1.8rem;
+      padding: 0.8rem 1rem;
+    }
+  
+    .tabContent,
+    .statsGrid,
+    .impactGrid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .contentRight {
+      order: -1;
+    }
+  
+    .statsRight {
+      gap: 1.5rem;
+    }
+  
+    .impactGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroBanner {
+      padding: 110px 20px 50px 20px;
+    }
+  
+    .mvvSection,
+    .statsSection,
+    .impactSection {
+      padding: 3rem 20px;
+    }
+  
+    .heroTitle {
+      font-size: 2rem;
+    }
+  
+    .heroDescription {
+      font-size: 1rem;
+    }
+  
+    .heroFeatures {
+      grid-template-columns: 1fr;
+    }
+  
+    .tabNavigation {
+      gap: 1.5rem;
+    }
+  
+    .tabButton {
+      font-size: 1.5rem;
+      padding: 0.6rem 0.8rem;
+    }
+  
+    .contentTitle,
+    .statsTitle,
+    .impactTitle {
+      font-size: 1.8rem;
+    }
+  
+    .statsRight {
+      grid-template-columns: 1fr;
+    }
+  
+    .statNumber {
+      font-size: 2.8rem;
+    }
+  
+    .decorCircle1,
+    .decorCircle2 {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heroTitle {
+      font-size: 1.8rem;
+    }
+  
+    .contentTitle,
+    .statsTitle,
+    .impactTitle {
+      font-size: 1.5rem;
+    }
+  
+    .tabButton {
+      font-size: 1.2rem;
+      padding: 0.5rem 0.5rem;
+    }
+  
+    .contentText,
+    .statsText,
+    .impactText {
+      font-size: 1rem;
+    }
+  
+    .tabNavigation {
+      gap: 1rem;
+    }
+  }

@@ -1,0 +1,521 @@
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content - BIGGER */
+.modalContent {
+  background: var(--white);
+  border-radius: 30px;
+  max-width: 1400px;
+  width: 95%;
+  max-height: 95vh;
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: var(--white);
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  font-weight: 300;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg);
+}
+
+/* Modal Inner Container */
+.modalInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+  overflow-y: auto;
+  max-height: 95vh;
+}
+
+/* Left Section - Textured Dark Blue Background */
+.leftSection {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    ),
+    linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal lines texture overlay */
+.leftSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.015) 10px,
+    rgba(255, 255, 255, 0.015) 20px
+  );
+  pointer-events: none;
+}
+
+.modalTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  font-family: var(--font-family);
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
+
+.modalDescription {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 0 0 3rem 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-family);
+  position: relative;
+  z-index: 2;
+}
+
+/* Laptop Graphic - IMPROVED */
+.laptopGraphic {
+  position: relative;
+  margin-top: auto;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 300px;
+}
+
+.laptop {
+  position: relative;
+  z-index: 3;
+  transform: perspective(1000px) rotateY(-5deg);
+}
+
+.screen {
+  width: 380px;
+  height: 240px;
+  background: #f8f9fa;
+  border-radius: 12px 12px 0 0;
+  border: 12px solid #34495e;
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.screenContent {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  height: 100%;
+}
+
+.imageBox {
+  background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.imageBox::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.keyboard {
+  width: 410px;
+  height: 16px;
+  background: linear-gradient(180deg, #3d5a80 0%, #2c3e50 100%);
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.phone {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 90px;
+  height: 160px;
+  background: #2c3e50;
+  border-radius: 16px;
+  border: 5px solid #34495e;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: rotate(-8deg);
+  z-index: 2;
+}
+
+.phoneScreen {
+  width: 100%;
+  height: 88%;
+  background: linear-gradient(135deg, #5a6c7d 0%, #3d4f5c 100%);
+  border-radius: 12px;
+  margin-top: 5px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Geometric Shapes */
+.geometricShapes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: 1;
+}
+
+.triangle1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 250px solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom: 200px solid rgba(139, 90, 60, 0.7);
+}
+
+.triangle2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 280px solid transparent;
+  border-bottom: 160px solid rgba(109, 74, 58, 0.8);
+}
+
+/* Right Section - Form */
+.rightSection {
+  padding: 4rem;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input,
+.inputHalf {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background: transparent;
+  color: var(--text-light);
+}
+
+.input::placeholder,
+.inputHalf::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.input:focus,
+.inputHalf:focus,
+.textarea:focus {
+  outline: none;
+  border-bottom-color: var(--primary);
+}
+
+.input:disabled,
+.inputHalf:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background: transparent;
+  resize: vertical;
+  min-height: 120px;
+  color: var(--text-light);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.submitButton {
+  width: 100%;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 1.15rem;
+  border-radius: 35px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: var(--font-family);
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 15px rgba(255, 125, 40, 0.3);
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 125, 40, 0.4);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #c3e6cb;
+  font-family: var(--font-family);
+}
+
+.errorMessage {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #f5c6cb;
+  font-family: var(--font-family);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .modalContent {
+    max-width: 95%;
+  }
+
+  .modalInner {
+    min-height: 650px;
+  }
+
+  .leftSection,
+  .rightSection {
+    padding: 3rem;
+  }
+
+  .modalTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .modalInner {
+    grid-template-columns: 1fr;
+  }
+
+  .leftSection {
+    min-height: 450px;
+    padding: 2.5rem;
+  }
+
+  .modalTitle {
+    font-size: 2.2rem;
+  }
+
+  .rightSection {
+    padding: 2.5rem;
+  }
+
+  .closeButton {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .laptop {
+    transform: perspective(1000px) rotateY(0deg) scale(0.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .modalContent {
+    border-radius: 20px;
+    max-height: 95vh;
+    width: 98%;
+  }
+
+  .modalInner {
+    min-height: auto;
+  }
+
+  .leftSection {
+    padding: 2rem;
+    min-height: 400px;
+  }
+
+  .modalTitle {
+    font-size: 1.9rem;
+  }
+
+  .modalDescription {
+    font-size: 1rem;
+  }
+
+  .rightSection {
+    padding: 2rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .laptop {
+    transform: scale(0.75);
+  }
+
+  .screen {
+    width: 320px;
+    height: 200px;
+  }
+
+  .keyboard {
+    width: 350px;
+  }
+
+  .phone {
+    width: 75px;
+    height: 135px;
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .closeButton {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    top: 20px;
+    right: 20px;
+  }
+}

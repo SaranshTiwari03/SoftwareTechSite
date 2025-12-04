@@ -1,0 +1,371 @@
+/* CTA Section */
+.ctaSection {
+  background: var(--black);
+  padding: 6rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.ctaContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.ctaSubtitle {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+  font-family: var(--font-family);
+}
+
+.ctaTitle {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 2.5rem 0;
+  font-family: var(--font-family);
+  letter-spacing: -1px;
+}
+
+.ctaButton {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 1rem 2.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ctaButton:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  background: var(--black);
+  color: var(--white);
+  width: 100%;
+  padding: 4rem 0 0 0;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* Footer Grid */
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 2rem 0;
+  font-family: var(--font-family);
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 3rem;
+}
+
+.footerLink {
+  color: var(--white);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-family: var(--font-family);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.footerLink:hover {
+  color: var(--primary);
+}
+
+/* Locations Section */
+.locationsSection {
+  margin-bottom: 2.5rem;
+}
+
+.locationsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.locationLink {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-family: var(--font-family);
+  font-weight: 500;
+}
+
+.separator {
+  color: var(--white);
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.contactLink {
+  color: var(--white);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+.contactLink:hover {
+  color: var(--primary);
+}
+
+/* Bottom Footer */
+.bottomFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--text-heading-dark);
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  color: var(--white);
+  font-size: 0.95rem;
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  color: var(--white);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+.legalLink:hover {
+  color: var(--primary);
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .container,
+  .ctaContainer {
+    max-width: 1300px;
+    padding: 0 50px;
+  }
+
+  .footerGrid {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container,
+  .ctaContainer {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+  
+  .footerGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  
+  .linkList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container,
+  .ctaContainer {
+    padding: 0 40px;
+  }
+
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .linkList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 4rem 0;
+  }
+
+  .ctaContainer,
+  .container {
+    padding: 0 30px;
+  }
+
+  .ctaTitle {
+    font-size: 3rem;
+  }
+
+  .footer {
+    padding: 3rem 0 0 0;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .columnTitle {
+    font-size: 1.25rem;
+  }
+
+  .footerLink {
+    font-size: 0.95rem;
+  }
+
+  .linkList {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .bottomFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .legalLinks {
+    gap: 1.5rem;
+  }
+
+  .socialIcons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaTitle {
+    font-size: 2.5rem;
+  }
+
+  .ctaButton {
+    padding: 0.9rem 2.2rem;
+    font-size: 0.9rem;
+  }
+
+  .ctaContainer,
+  .container {
+    padding: 0 20px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .columnTitle {
+    font-size: 1.15rem;
+  }
+
+  .footerLink {
+    font-size: 0.9rem;
+  }
+
+  .locationsList {
+    gap: 1rem;
+  }
+
+  .locationLink,
+  .contactLink {
+    font-size: 0.85rem;
+  }
+
+  .socialLink {
+    width: 36px;
+    height: 36px;
+  }
+
+  .copyright,
+  .legalLink {
+    font-size: 0.85rem;
+  }
+}

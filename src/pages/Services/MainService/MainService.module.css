@@ -1,0 +1,189 @@
+.mainServicePage {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* Services Section */
+  .servicesSection {
+    padding: 6rem 0;
+    background: #ffffff;
+  }
+  
+  .servicesContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .categoryBlock {
+    margin-bottom: 6rem;
+  }
+  
+  .categoryBlock:last-child {
+    margin-bottom: 0;
+  }
+  
+  .categoryHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .categoryTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 0 1rem 0;
+    font-family: var(--font-family);
+  }
+  
+  .categoryDescription {
+    font-size: 1.15rem;
+    color: #6b7280;
+    margin: 0;
+    font-family: var(--font-family);
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .serviceCard {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: #F8F8F9;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .serviceCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--primary);
+    transition: height 0.3s ease;
+  }
+  
+  .serviceCard:hover::before {
+    height: 100%;
+  }
+  
+  .serviceCard:hover {
+    background: white;
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cardContent {
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+  
+  .serviceName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary);
+    font-family: var(--font-family);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.4;
+  }
+  
+  .serviceDescription {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .cardArrow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .arrow {
+    font-size: 1.75rem;
+    color: var(--primary);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  
+  .serviceCard:hover .arrow {
+    transform: translateX(8px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .servicesGrid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .servicesContainer {
+      padding: 0 20px;
+    }
+  
+    .servicesGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .categoryTitle {
+      font-size: 2rem;
+    }
+  
+    .categoryDescription {
+      font-size: 1rem;
+    }
+  
+    .servicesSection {
+      padding: 4rem 0;
+    }
+  
+    .categoryBlock {
+      margin-bottom: 4rem;
+    }
+  
+    .serviceCard {
+      padding: 1.5rem;
+    }
+  
+    .serviceName {
+      font-size: 1.1rem;
+    }
+  
+    .serviceDescription {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .categoryTitle {
+      font-size: 1.75rem;
+    }
+  
+    .categoryDescription {
+      font-size: 0.95rem;
+    }
+  
+    .servicesSection {
+      padding: 3rem 0;
+    }
+  
+    .categoryBlock {
+      margin-bottom: 3rem;
+    }
+  }

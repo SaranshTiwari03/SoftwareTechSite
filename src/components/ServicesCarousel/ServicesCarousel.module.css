@@ -1,0 +1,422 @@
+.carouselSection {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 0 4rem 0;
+    font-family: var(--font-family);
+    text-align: center;
+    letter-spacing: -0.5px;
+  }
+  
+  /* Carousel Wrapper */
+  .carouselWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Navigation Buttons - Simple dark grey arrows, no circle */
+  .navButton {
+    background: transparent;
+    border: none;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    color: #4a5568;
+    z-index: 10;
+    padding: 0;
+  }
+  
+  .navButton:hover {
+    color: #ffffff;
+    transform: scale(1.15);
+  }
+  
+  .navButton svg {
+    flex-shrink: 0;
+    stroke-width: 3;
+  }
+  
+  .navButtonLeft {
+    margin-right: 0;
+  }
+  
+  .navButtonRight {
+    margin-left: 0;
+  }
+  
+  /* Carousel Container - WIDER */
+  .carouselContainer {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .carouselTrack {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 2rem;
+  }
+  
+  /* Service Card - WIDER CARDS */
+  .serviceCard {
+    flex: 0 0 calc(33.333% - 1.333rem);
+    min-width: calc(33.333% - 1.333rem);
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .serviceCard:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+  }
+  
+  .cardContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Icon */
+  .iconWrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #fff5ed 0%, #ffe8d6 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+  }
+  
+  .icon {
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /* Card Title - Better font */
+  .cardTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 0 1.2rem 0;
+    font-family: var(--font-family);
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+  }
+  
+  /* Card Description - Better font */
+  .cardDescription {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #586474;
+    margin: 0;
+    font-family: var(--font-family);
+    flex: 1;
+    font-weight: 400;
+  }
+  
+  /* Arrow Wrapper */
+  .arrowWrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .arrowHovered {
+    background: var(--primary);
+    color: white;
+    transform: translateX(10px) translateY(10px);
+  }
+  
+  /* Image Overlay - Slides from bottom */
+  .imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(35, 39, 47, 0.945) 0%,
+      rgba(35, 39, 47, 0.904) 100%
+    );
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+  }
+  
+  .imageVisible {
+    transform: translateY(0);
+  }
+  
+  .overlayContent {
+    text-align: center;
+    color: white;
+  }
+  
+  /* Overlay icon styles */
+  .overlayIconWrapper {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.8rem;
+  }
+  
+  .overlayIcon {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlayIcon svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .overlayTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1.2rem 0;
+    font-family: var(--font-family);
+    letter-spacing: -0.3px;
+  }
+  
+  .overlayDescription {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 1.8rem 0;
+    font-family: var(--font-family);
+  }
+  
+  .overlayArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlayArrow svg {
+    animation: slideRight 0.6s ease-in-out infinite alternate;
+  }
+  
+  @keyframes slideRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(10px);
+    }
+  }
+  
+  /* CTA Button */
+  .ctaWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+  }
+  
+  .ctaButton {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 1.1rem 3.5rem;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 125, 40, 0.3);
+    font-family: var(--font-family);
+  }
+  
+  .ctaButton:hover {
+    background-color: #e16f20;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 125, 40, 0.4);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1400px) {
+    .container {
+      max-width: 1300px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .serviceCard {
+      flex: 0 0 calc(50% - 1rem);
+      min-width: calc(50% - 1rem);
+    }
+    
+    .heading {
+      font-size: 3rem;
+    }
+    
+    .container {
+      max-width: 1100px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carouselSection {
+      padding: 3rem 0;
+    }
+    
+    .container {
+      padding: 0 20px;
+    }
+    
+    .heading {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .serviceCard {
+      flex: 0 0 100%;
+      min-width: 100%;
+      min-height: 360px;
+      padding: 2.5rem 2rem;
+    }
+    
+    .navButton {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+    }
+    
+    .carouselWrapper {
+      gap: 1.5rem;
+    }
+    
+    .cardTitle {
+      font-size: 1.5rem;
+    }
+    
+    .cardDescription {
+      font-size: 1rem;
+    }
+    
+    .overlayTitle {
+      font-size: 1.7rem;
+    }
+    
+    .overlayDescription {
+      font-size: 1.05rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 1.85rem;
+    }
+    
+    .serviceCard {
+      padding: 2rem 1.5rem;
+      min-height: 320px;
+    }
+    
+    .iconWrapper {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .icon svg {
+      width: 38px;
+      height: 38px;
+    }
+    
+    .overlayIconWrapper {
+      width: 75px;
+      height: 75px;
+    }
+    
+    .overlayIcon svg {
+      width: 42px;
+      height: 42px;
+    }
+    
+    .ctaButton {
+      padding: 1rem 2.5rem;
+      font-size: 1.05rem;
+      width: 100%;
+      max-width: 350px;
+    }
+    
+    .navButton {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      min-height: 45px;
+    }
+    
+    .navButton svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
