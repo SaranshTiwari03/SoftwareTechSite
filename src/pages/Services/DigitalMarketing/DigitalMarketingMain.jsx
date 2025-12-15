@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './DigitalMarketing.module.css';
 
@@ -157,8 +159,19 @@ export default function DigitalMarketingMain() {
     }
   };
 
+  const seoData = pageSEO.digitalMarketingMain;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/marketing"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['digital-marketing-main']} />
 
       {/* Why Choose Us Section */}
@@ -167,9 +180,9 @@ export default function DigitalMarketingMain() {
           <div className={styles.whyChooseGrid}>
             {/* Left: Tabs */}
             <div className={styles.tabsColumn}>
-              <h2 className={styles.sectionTitle}>
+              <h1 className={styles.sectionTitle}>
                 Why Choose {CompanyConfig.name} for Digital Marketing?
-              </h2>
+              </h1>
               <p className={styles.sectionSubtitle}>
                 We deliver results-driven digital marketing that grows your business and maximizes ROI.
               </p>
@@ -216,7 +229,7 @@ export default function DigitalMarketingMain() {
             {/* Right: Content */}
             <div className={styles.contentColumn}>
               <div className={styles.tabContent}>
-                <h3 className={styles.contentTitle}>{tabContent[activeTab].title}</h3>
+                <h2 className={styles.contentTitle}>{tabContent[activeTab].title}</h2>
                 <p className={styles.contentDescription}>{tabContent[activeTab].description}</p>
                 
                 <ul className={styles.featuresList}>

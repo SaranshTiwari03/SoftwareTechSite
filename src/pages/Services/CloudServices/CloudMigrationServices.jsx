@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './CloudServices.module.css';
 
@@ -171,41 +173,48 @@ export default function CloudMigrationServices() {
         'Security audits and vulnerability assessments',
         'Backup and disaster recovery procedures'
       ],
-      closing: 'All major cloud platforms we work with maintain the highest security certifications.'
+      closing: 'All major cloud platforms meet strict security and compliance standards.'
     },
     {
-      question: 'What happens to our existing data center?',
-      answer: 'After successful migration and validation, you have several options for your existing infrastructure. We help you plan the decommissioning process, which includes secure data deletion, hardware disposal or repurposing, and proper documentation. Many clients maintain a hybrid approach initially, gradually reducing on-premise infrastructure as confidence in cloud operations grows.'
+      question: 'What happens if something goes wrong during migration?',
+      answer: 'We have comprehensive contingency plans in place. Every migration includes detailed rollback procedures, regular backups, and staged migration approaches. Our team provides 24/7 support during the migration period to address any issues immediately. We also conduct extensive testing before, during, and after migration to ensure everything works perfectly.'
     },
     {
-      question: 'Can we migrate incrementally or do we have to migrate everything at once?',
-      answer: 'We strongly recommend phased migration approaches. You can migrate applications in stages, starting with non-critical workloads and gradually moving to mission-critical systems. This reduces risk, allows time for teams to adapt, and provides flexibility to adjust the strategy based on early results. Hybrid cloud setups are also an option for gradual transition.'
-    },
-    {
-      question: 'What if something goes wrong during migration?',
-      answer: 'We plan for contingencies with comprehensive rollback procedures. Every migration includes detailed testing, validation checkpoints, and backup systems. If issues arise, we can quickly revert to the previous state while we address problems. Our experienced team monitors migrations 24/7 to catch and resolve issues immediately.'
+      question: 'Do you provide support after migration?',
+      answer: 'Yes, we offer comprehensive post-migration support including 24/7 monitoring, performance optimization, cost optimization, security updates, and ongoing maintenance. Our support packages are customized to your specific needs and SLA requirements.'
     }
   ];
 
+  const seoData = pageSEO.cloudMigrationServices;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/cloud/migration"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['cloud-migration']} />
 
-      {/* Migration Benefits Section */}
-      <section className={styles.featuresSection}>
+      {/* Benefits Section */}
+      <section className={styles.benefitsSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Why Migrate to the Cloud?</h2>
+            <h1 className={styles.sectionTitle}>Why Migrate to the Cloud?</h1>
             <p className={styles.sectionSubtitle}>
-              Transform your business with cloud migration and unlock new opportunities for growth
+              Transform your business with the power, flexibility, and cost-efficiency of cloud computing
             </p>
           </div>
 
-          <div className={styles.featuresGrid}>
+          <div className={styles.benefitsGrid}>
             {migrationBenefits.map((benefit, index) => (
-              <div key={index} className={styles.featureCard}>
-                <div className={styles.featureIcon}>{benefit.icon}</div>
-                <h3 className={styles.featureTitle}>{benefit.title}</h3>
+              <div key={index} className={styles.benefitCard}>
+                <div className={styles.benefitIcon}>{benefit.icon}</div>
+                <h2 className={styles.benefitTitle}>{benefit.title}</h2>
                 <p className={styles.featureDescription}>{benefit.description}</p>
               </div>
             ))}

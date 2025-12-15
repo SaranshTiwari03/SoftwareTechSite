@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from '../PlatformPage.module.css';
 
@@ -84,15 +86,17 @@ export default function GCP() {
       answer: "GCP excels in data analytics, machine learning, and Kubernetes management. It offers competitive pricing, live migration capabilities, and Google's innovative AI services. The choice depends on your specific requirements, existing infrastructure, and technical expertise."
     },
     {
-      question: "What are the costs of GCP implementation?",
-      answer: "Implementation costs vary based on project scope:",
+      question: "What are the key benefits of migrating to GCP?",
+      answer: "Migrating to Google Cloud Platform provides numerous advantages:",
       points: [
-        "Basic cloud setup: $5,000 - $15,000",
-        "Application migration: $15,000 - $50,000",
-        "Enterprise migration: $50,000 - $150,000+",
-        "Managed services: $1,500 - $8,000/month"
+        "Advanced data analytics and machine learning capabilities",
+        "Cost optimization with sustained use discounts and committed use contracts",
+        "Superior performance with Google's global fiber network",
+        "Enhanced security with Google's enterprise-grade infrastructure",
+        "Seamless integration with Google Workspace and other Google services",
+        "Live migration capabilities with minimal downtime"
       ],
-      closing: "We provide detailed cost analysis and optimization recommendations."
+      closing: "We help you maximize these benefits through strategic migration planning and implementation."
     },
     {
       question: "Do you provide GCP managed services?",
@@ -100,8 +104,19 @@ export default function GCP() {
     }
   ];
 
+  const seoData = pageSEO.gcp;
+
   return (
     <div className={styles.platformPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/gcp"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['gcp']} />
 
@@ -110,9 +125,9 @@ export default function GCP() {
         <div className={styles.connectContainer}>
           <div className={styles.connectGrid}>
             <div className={styles.connectLeft}>
-              <h2 className={styles.connectTitle}>
+              <h1 className={styles.connectTitle}>
                 Google Cloud Platform Services To Drive Innovation
-              </h2>
+              </h1>
             </div>
             <div className={styles.connectRight}>
               <p className={styles.connectDescription}>

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig, PricingConfig } from '../../../theme/theme';
 import styles from './MobileAppDev.module.css';
 
@@ -56,17 +58,28 @@ export default function CrossPlatformApp() {
     }
   ];
 
+  const seoData = pageSEO.crossPlatformApp;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/mobile-app/cross-platform"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['cross-platform-app']} />
 
       {/* Section 1: Features Grid - WHITE */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for Cross-Platform Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               Build once, deploy everywhere - reach both iOS and Android users with a single codebase
             </p>
@@ -75,7 +88,7 @@ export default function CrossPlatformApp() {
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>💰</div>
-              <h3 className={styles.featureCardTitle}>Cost-Effective</h3>
+              <h2 className={styles.featureCardTitle}>Cost-Effective</h2>
               <p className={styles.featureCardDescription}>
                 Save up to 40% compared to native development by building one app for multiple platforms
               </p>
@@ -83,7 +96,7 @@ export default function CrossPlatformApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>⚡</div>
-              <h3 className={styles.featureCardTitle}>Faster Development</h3>
+              <h2 className={styles.featureCardTitle}>Faster Development</h2>
               <p className={styles.featureCardDescription}>
                 Launch your app on both platforms simultaneously with shorter development cycles
               </p>
@@ -91,7 +104,7 @@ export default function CrossPlatformApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🎨</div>
-              <h3 className={styles.featureCardTitle}>Native-Like Performance</h3>
+              <h2 className={styles.featureCardTitle}>Native-Like Performance</h2>
               <p className={styles.featureCardDescription}>
                 Smooth, responsive apps that feel native on both iOS and Android platforms
               </p>
@@ -99,7 +112,7 @@ export default function CrossPlatformApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🔄</div>
-              <h3 className={styles.featureCardTitle}>Easy Updates</h3>
+              <h2 className={styles.featureCardTitle}>Easy Updates</h2>
               <p className={styles.featureCardDescription}>
                 Update your app once and changes reflect across all platforms instantly
               </p>
@@ -107,7 +120,7 @@ export default function CrossPlatformApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📱</div>
-              <h3 className={styles.featureCardTitle}>Consistent UX</h3>
+              <h2 className={styles.featureCardTitle}>Consistent UX</h2>
               <p className={styles.featureCardDescription}>
                 Deliver uniform user experience across iOS and Android with shared UI components
               </p>
@@ -115,7 +128,7 @@ export default function CrossPlatformApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🚀</div>
-              <h3 className={styles.featureCardTitle}>Rapid Prototyping</h3>
+              <h2 className={styles.featureCardTitle}>Rapid Prototyping</h2>
               <p className={styles.featureCardDescription}>
                 Quickly build and test prototypes to validate ideas before full development
               </p>

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig, PricingConfig } from '../../../theme/theme';
 import styles from './CustomSoftware.module.css';
 
@@ -51,17 +53,28 @@ export default function CRMSolution() {
     }
   ];
 
+  const seoData = pageSEO.crmSolution;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/custom-software/crm"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['crm-solution']} />
 
       {/* Section 1: Features Grid - WHITE */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for CRM Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               Build powerful CRM solutions that transform how you manage customer relationships
             </p>
@@ -70,7 +83,7 @@ export default function CRMSolution() {
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📊</div>
-              <h3 className={styles.featureCardTitle}>Sales Pipeline Management</h3>
+              <h2 className={styles.featureCardTitle}>Sales Pipeline Management</h2>
               <p className={styles.featureCardDescription}>
                 Visualize and manage your entire sales process from lead to close with customizable pipeline stages
               </p>
@@ -78,7 +91,7 @@ export default function CRMSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>👥</div>
-              <h3 className={styles.featureCardTitle}>Contact Management</h3>
+              <h2 className={styles.featureCardTitle}>Contact Management</h2>
               <p className={styles.featureCardDescription}>
                 Centralize all customer information, interactions, and history in one accessible place
               </p>
@@ -86,7 +99,7 @@ export default function CRMSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📧</div>
-              <h3 className={styles.featureCardTitle}>Email Integration</h3>
+              <h2 className={styles.featureCardTitle}>Email Integration</h2>
               <p className={styles.featureCardDescription}>
                 Sync emails, track communications, and manage campaigns directly from your CRM
               </p>
@@ -94,7 +107,7 @@ export default function CRMSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📈</div>
-              <h3 className={styles.featureCardTitle}>Analytics & Reporting</h3>
+              <h2 className={styles.featureCardTitle}>Analytics & Reporting</h2>
               <p className={styles.featureCardDescription}>
                 Generate detailed reports and gain insights into sales performance and customer behavior
               </p>
@@ -102,7 +115,7 @@ export default function CRMSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🔔</div>
-              <h3 className={styles.featureCardTitle}>Task Automation</h3>
+              <h2 className={styles.featureCardTitle}>Task Automation</h2>
               <p className={styles.featureCardDescription}>
                 Automate repetitive tasks, follow-ups, and workflows to save time and increase efficiency
               </p>
@@ -110,7 +123,7 @@ export default function CRMSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🔗</div>
-              <h3 className={styles.featureCardTitle}>Third-Party Integrations</h3>
+              <h2 className={styles.featureCardTitle}>Third-Party Integrations</h2>
               <p className={styles.featureCardDescription}>
                 Connect with your favorite tools including email, calendar, accounting, and marketing platforms
               </p>

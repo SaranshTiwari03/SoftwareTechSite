@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FAQ from '../../components/FAQ/FAQ';
+import SEO from '../../components/SEO/SEO';
 import ScheduleCallModal from '../../components/ScheduleCallModal/ScheduleCallModal';
 import { sendConsultationEmail } from '../../services/emailService';
 import { allBanners } from '../../data/allBannersData';
+import { pageSEO } from '../../data/seoData';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -169,9 +171,19 @@ export default function Contact() {
   ];
 
   const contactBanner = allBanners.contact;
+  const seoData = pageSEO.contact;
 
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/contact"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <div className={styles.contactPage}>
         {/* Hero Section with Form */}
         <section className={styles.heroSection}>
@@ -202,9 +214,9 @@ export default function Contact() {
             {/* Right Side - Contact Form */}
             <div className={styles.formContainer}>
               <div className={styles.formCard}>
-                <h3 className={styles.formTitle}>
+                <h2 className={styles.formTitle}>
                   Book a Free <span className={styles.formTitleOrange}>Consultation</span>
-                </h3>
+                </h2>
 
                 <form onSubmit={handleSubmit} className={styles.form}>
                   <input

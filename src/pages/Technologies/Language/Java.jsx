@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from '../TechnologyPage.module.css';
 
@@ -101,17 +103,28 @@ export default function Java() {
     }
   ];
 
+  const seoData = pageSEO.java;
+
   return (
     <div className={styles.techPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/java"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['java']} />
 
       {/* Why Hire Section - FIRST */}
       <section className={styles.whyHireSection}>
         <div className={styles.whyHireContainer}>
-          <h2 className={styles.whyHireTitle}>
+          <h1 className={styles.whyHireTitle}>
             Hire Java Developers For Enterprise Tools
-          </h2>
+          </h1>
           <p className={styles.whyHireSubtitle}>
             Java is one of the most advanced server-side technologies that enables businesses to achieve remarkable growth and build scalable enterprise solutions with proven reliability.
           </p>

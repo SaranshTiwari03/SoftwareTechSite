@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './DigitalMarketing.module.css';
 
@@ -177,27 +179,24 @@ export default function SocialMediaMarketing() {
       answer: 'Posting frequency varies by platform and audience. Our general recommendations:',
       points: [
         'Facebook: 1-2 times per day',
-        'Instagram: 1-2 posts + 3-5 stories per day',
+        'Instagram: 1-2 times per day + Stories',
         'LinkedIn: 3-5 times per week',
         'Twitter: 3-5 times per day',
-        'TikTok: 1-3 times per day'
+        'TikTok: 1-3 times per day',
+        'YouTube: 1-2 times per week'
       ],
-      closing: 'We optimize posting frequency based on your audience engagement patterns.'
+      closing: 'We adjust frequency based on your audience engagement patterns.'
     },
     {
-      question: 'How long does it take to grow a social media following?',
-      answer: 'Growing an engaged following takes time and consistency. Typically:',
+      question: 'How long does it take to see results from social media?',
+      answer: 'Social media growth requires patience and consistency. Typical timelines:',
       points: [
-        'New accounts: 3-6 months to establish presence',
-        'Moderate growth: 6-12 months for substantial following',
-        'Strong growth: 12+ months for large, engaged community',
-        'Paid campaigns can accelerate growth significantly'
+        '1 month: Initial engagement and community building',
+        '2-3 months: Growing follower base and brand awareness',
+        '4-6 months: Significant growth and engaged community',
+        '6+ months: Strong ROI and business impact'
       ],
-      closing: 'We focus on building genuine, engaged followers rather than vanity metrics.'
-    },
-    {
-      question: 'Do you create content or do I need to provide it?',
-      answer: 'We provide full content creation services including graphic design, video production, and copywriting. However, we welcome any content, photos, or videos you want to share. We can also create a hybrid approach where we produce some content and you provide product photos, behind-the-scenes content, etc.'
+      closing: 'Paid campaigns can deliver faster results while organic growth builds long-term value.'
     },
     {
       question: 'How do you measure social media success?',
@@ -213,15 +212,26 @@ export default function SocialMediaMarketing() {
     }
   ];
 
+  const seoData = pageSEO.socialMediaMarketing;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/marketing/social-media"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['social-media-marketing']} />
 
       {/* Features Section */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Social Media Marketing Services</h2>
+            <h1 className={styles.sectionTitle}>Social Media Marketing Services</h1>
             <p className={styles.sectionSubtitle}>
               Build your brand, engage your audience, and drive business growth through social media
             </p>
@@ -231,7 +241,7 @@ export default function SocialMediaMarketing() {
             {features.map((feature, index) => (
               <div key={index} className={styles.featureCard}>
                 <div className={styles.featureIcon}>{feature.icon}</div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <h2 className={styles.featureTitle}>{feature.title}</h2>
                 <p className={styles.featureDescription}>{feature.description}</p>
               </div>
             ))}

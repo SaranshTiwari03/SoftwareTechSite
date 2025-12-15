@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from '../PlatformPage.module.css';
 
@@ -101,8 +103,19 @@ export default function Azure() {
     }
   ];
 
+  const seoData = pageSEO.azure;
+
   return (
     <div className={styles.platformPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/azure"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['azure']} />
 
@@ -111,9 +124,9 @@ export default function Azure() {
         <div className={styles.connectContainer}>
           <div className={styles.connectGrid}>
             <div className={styles.connectLeft}>
-              <h2 className={styles.connectTitle}>
+              <h1 className={styles.connectTitle}>
                 MS Azure Consulting Services To Build Flexible Ecosystems Of Data
-              </h2>
+              </h1>
             </div>
             <div className={styles.connectRight}>
               <p className={styles.connectDescription}>

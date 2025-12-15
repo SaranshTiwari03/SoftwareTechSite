@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig, PricingConfig } from '../../../theme/theme';
 import styles from './CustomSoftware.module.css';
 
@@ -70,17 +72,28 @@ export default function CustomSoftwareMain() {
     }
   ];
 
+  const seoData = pageSEO.customSoftwareMain;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/custom-software"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['custom-software-main']} />
 
       {/* Section 1: Why Choose Us - WHITE with Tabs */}
       <section className={styles.whyChooseSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for Custom Software Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               We build tailored software solutions that perfectly align with your business processes and drive operational efficiency
             </p>
@@ -122,7 +135,7 @@ export default function CustomSoftwareMain() {
             <div className={styles.tabContent}>
               {activeTab === 'crm' && (
                 <div className={styles.tabPane}>
-                  <h3 className={styles.tabTitle}>Custom CRM Development</h3>
+                  <h2 className={styles.tabTitle}>Custom CRM Development</h2>
                   <p className={styles.tabDescription}>
                     Build powerful Customer Relationship Management systems that streamline your sales processes, improve customer engagement, and drive business growth. Our CRM solutions are tailored to your unique workflows and integrate seamlessly with your existing tools.
                   </p>
@@ -161,7 +174,7 @@ export default function CustomSoftwareMain() {
 
               {activeTab === 'erp' && (
                 <div className={styles.tabPane}>
-                  <h3 className={styles.tabTitle}>Enterprise Resource Planning Solutions</h3>
+                  <h2 className={styles.tabTitle}>Enterprise Resource Planning Solutions</h2>
                   <p className={styles.tabDescription}>
                     Develop comprehensive ERP systems that unify your business processes across departments. From inventory management to financial accounting, our ERP solutions provide real-time visibility and control over your entire organization.
                   </p>
@@ -176,22 +189,22 @@ export default function CustomSoftwareMain() {
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Inventory & Supply Chain</strong>
-                        <p>Real-time tracking of inventory, orders, and supply chain operations</p>
+                        <strong>Inventory Control</strong>
+                        <p>Real-time stock tracking and warehouse management</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
                         <strong>HR & Payroll</strong>
-                        <p>Employee management, attendance, payroll, and performance tracking</p>
+                        <p>Employee management, attendance, and payroll processing</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Business Intelligence</strong>
-                        <p>Advanced analytics and reporting for data-driven decisions</p>
+                        <strong>Supply Chain</strong>
+                        <p>End-to-end supply chain visibility and management</p>
                       </div>
                     </li>
                   </ul>
@@ -200,23 +213,23 @@ export default function CustomSoftwareMain() {
 
               {activeTab === 'cms' && (
                 <div className={styles.tabPane}>
-                  <h3 className={styles.tabTitle}>Content Management Systems</h3>
+                  <h2 className={styles.tabTitle}>Content Management Systems</h2>
                   <p className={styles.tabDescription}>
-                    Create flexible, user-friendly CMS platforms that empower your team to manage website content, digital assets, and online presence without technical expertise. Our CMS solutions are scalable, secure, and SEO-optimized.
+                    Create powerful, user-friendly CMS platforms that empower your team to manage content effortlessly. Our custom CMS solutions are designed around your content workflows and publishing requirements.
                   </p>
                   <ul className={styles.featureList}>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
                         <strong>Intuitive Content Editor</strong>
-                        <p>Easy-to-use interface for creating and publishing content</p>
+                        <p>WYSIWYG editor for easy content creation and formatting</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Digital Asset Management</strong>
-                        <p>Organize and manage images, videos, and documents efficiently</p>
+                        <strong>Media Management</strong>
+                        <p>Organize and manage images, videos, and documents</p>
                       </div>
                     </li>
                     <li>
@@ -229,8 +242,8 @@ export default function CustomSoftwareMain() {
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>SEO & Analytics</strong>
-                        <p>Built-in SEO tools and analytics integration for better visibility</p>
+                        <strong>SEO Optimization</strong>
+                        <p>Built-in SEO tools for better search engine visibility</p>
                       </div>
                     </li>
                   </ul>
@@ -241,13 +254,13 @@ export default function CustomSoftwareMain() {
         </div>
       </section>
 
-      {/* Section 2: Our Custom Software Services - GRAY */}
+      {/* Section 2: Services Grid - GRAY */}
       <section className={styles.servicesGridSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our Custom Software Development Services</h2>
+            <h2 className={styles.sectionTitle}>Our Custom Software Solutions</h2>
             <p className={styles.sectionSubtitle}>
-              Comprehensive solutions tailored to your business needs
+              Comprehensive software development services for modern businesses
             </p>
           </div>
 

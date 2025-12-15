@@ -1,6 +1,8 @@
 import React from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from './MainIndustries.module.css';
 
@@ -10,7 +12,7 @@ export default function MainIndustries() {
       title: 'CMS',
       description: 'Tailored a capable of providing advanced CMS platforms that manage a user-friendly interface for content updates',
       path: '/services/software/cms',
-      icon: '📝'
+      icon: '📄'
     },
     {
       title: 'HRM',
@@ -131,17 +133,27 @@ export default function MainIndustries() {
     }
   ];
 
+  const seoData = pageSEO.industriesMain;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries"
+        ogType="website"
+      />
+
       <ConsultationBanner data={allBanners['industries']} />
 
       {/* Innovative Solutions Section */}
       <section className={styles.solutionsSection}>
         <div className={styles.container}>
           <div className={styles.solutionsContent}>
-            <h2 className={styles.solutionsTitle}>
+            <h1 className={styles.solutionsTitle}>
               Innovative Solutions that Catalyze Transformation
-            </h2>
+            </h1>
             <p className={styles.solutionsDescription}>
               We specialize in crafting innovative software solutions of hi-tech transformation platforms that are flexible and easy to meet the unique requirements of our clients, propelling their digital evolution and refining product transformations.
             </p>
@@ -204,8 +216,6 @@ export default function MainIndustries() {
           </div>
         </div>
       </section>
-
-     
     </>
   );
 }

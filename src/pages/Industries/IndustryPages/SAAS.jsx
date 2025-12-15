@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from '../IndustryPage.module.css';
 
@@ -153,8 +155,19 @@ export default function SAAS() {
     }
   ];
 
+  const seoData = pageSEO.saas;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries/saas"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['saas']} />
 
       {/* Comprehensive Services Section */}
@@ -162,9 +175,9 @@ export default function SAAS() {
         <div className={styles.container}>
           <div className={styles.comprehensiveGrid}>
             <div className={styles.comprehensiveLeft}>
-              <h2 className={styles.comprehensiveTitle}>
+              <h1 className={styles.comprehensiveTitle}>
                 Comprehensive <span className={styles.orange}>SaaS App Development</span> Services
-              </h2>
+              </h1>
               <p className={styles.comprehensiveDescription}>
                 We deliver scalable, secure, and feature-rich SaaS solutions that transform business operations and drive recurring revenue. Our cloud-native platforms are built with modern architecture, intelligent automation, and seamless integrations to help you launch and scale your SaaS business successfully in competitive markets.
               </p>
@@ -182,7 +195,7 @@ export default function SAAS() {
               <div className={styles.servicesScroll}>
                 {comprehensiveServices.map((service, index) => (
                   <div key={index} className={styles.serviceCard}>
-                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                    <h2 className={styles.serviceTitle}>{service.title}</h2>
                     <p className={styles.serviceDescription}>{service.description}</p>
                   </div>
                 ))}
@@ -254,7 +267,7 @@ export default function SAAS() {
       {/* FAQ Section */}
       <FAQ faqs={faqData} title="SaaS Development FAQs" />
 
-      {/* Final CTA Section - FIXED WITH STOCK IMAGE */}
+      {/* Final CTA Section */}
       <section className={styles.finalCTA}>
         <div className={styles.container}>
           <div className={styles.finalCTAContent}>

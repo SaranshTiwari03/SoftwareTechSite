@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from '../IndustryPage.module.css';
 
@@ -155,8 +157,19 @@ export default function OnDemand() {
     }
   ];
 
+  const seoData = pageSEO.onDemand;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries/on-demand"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['on-demand']} />
 
       {/* Comprehensive Services Section */}
@@ -164,9 +177,9 @@ export default function OnDemand() {
         <div className={styles.container}>
           <div className={styles.comprehensiveGrid}>
             <div className={styles.comprehensiveLeft}>
-              <h2 className={styles.comprehensiveTitle}>
+              <h1 className={styles.comprehensiveTitle}>
                 Comprehensive <span className={styles.orange}>On-Demand App Development</span> Services
-              </h2>
+              </h1>
               <p className={styles.comprehensiveDescription}>
                 We create powerful on-demand service platforms that connect customers with service providers instantly. Our solutions leverage real-time technology, intelligent matching algorithms, and seamless payment processing to deliver exceptional on-demand experiences across food delivery, transportation, home services, healthcare, and more.
               </p>
@@ -184,7 +197,7 @@ export default function OnDemand() {
               <div className={styles.servicesScroll}>
                 {comprehensiveServices.map((service, index) => (
                   <div key={index} className={styles.serviceCard}>
-                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                    <h2 className={styles.serviceTitle}>{service.title}</h2>
                     <p className={styles.serviceDescription}>{service.description}</p>
                   </div>
                 ))}
@@ -256,7 +269,7 @@ export default function OnDemand() {
       {/* FAQ Section */}
       <FAQ faqs={faqData} title="On-Demand App Development FAQs" />
 
-      {/* Final CTA Section - FIXED WITH STOCK IMAGE */}
+      {/* Final CTA Section */}
       <section className={styles.finalCTA}>
         <div className={styles.container}>
           <div className={styles.finalCTAContent}>

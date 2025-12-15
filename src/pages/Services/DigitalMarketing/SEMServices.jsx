@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './DigitalMarketing.module.css';
 
@@ -160,15 +162,26 @@ export default function SEMServices() {
     }
   ];
 
+  const seoData = pageSEO.semServices;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/marketing/sem"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['sem-services']} />
 
       {/* Features Section */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Why Choose SEM for Your Business?</h2>
+            <h1 className={styles.sectionTitle}>Why Choose SEM for Your Business?</h1>
             <p className={styles.sectionSubtitle}>
               Drive immediate, qualified traffic and generate leads with strategic paid search advertising
             </p>
@@ -178,7 +191,7 @@ export default function SEMServices() {
             {features.map((feature, index) => (
               <div key={index} className={styles.featureCard}>
                 <div className={styles.featureIcon}>{feature.icon}</div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <h2 className={styles.featureTitle}>{feature.title}</h2>
                 <p className={styles.featureDescription}>{feature.description}</p>
               </div>
             ))}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from '../TechnologyPage.module.css';
 
@@ -103,17 +105,28 @@ export default function PHP() {
     }
   ];
 
+  const seoData = pageSEO.php;
+
   return (
     <div className={styles.techPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/php"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['php']} />
 
       {/* Why Hire Section - FIRST */}
       <section className={styles.whyHireSection}>
         <div className={styles.whyHireContainer}>
-          <h2 className={styles.whyHireTitle}>
+          <h1 className={styles.whyHireTitle}>
             Hire PHP Developers For Custom Development
-          </h2>
+          </h1>
           <p className={styles.whyHireSubtitle}>
             Our PHP development services encapsulate all the solutions you need for building powerful backend systems. We create scalable, maintainable applications that drive business growth and digital transformation.
           </p>

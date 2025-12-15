@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from '../IndustryPage.module.css';
 
@@ -154,8 +156,19 @@ export default function Retail() {
     }
   ];
 
+  const seoData = pageSEO.retail;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries/retail"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['retail']} />
 
       {/* Comprehensive Services Section */}
@@ -163,9 +176,9 @@ export default function Retail() {
         <div className={styles.container}>
           <div className={styles.comprehensiveGrid}>
             <div className={styles.comprehensiveLeft}>
-              <h2 className={styles.comprehensiveTitle}>
+              <h1 className={styles.comprehensiveTitle}>
                 Comprehensive <span className={styles.orange}>Retail App Development</span> Services
-              </h2>
+              </h1>
               <p className={styles.comprehensiveDescription}>
                 We create innovative retail technology solutions that transform shopping experiences and streamline operations. Our platforms unite online and offline channels, optimize inventory management, and leverage data analytics to help retailers increase sales, improve customer satisfaction, and stay competitive in the evolving retail landscape.
               </p>
@@ -183,7 +196,7 @@ export default function Retail() {
               <div className={styles.servicesScroll}>
                 {comprehensiveServices.map((service, index) => (
                   <div key={index} className={styles.serviceCard}>
-                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                    <h2 className={styles.serviceTitle}>{service.title}</h2>
                     <p className={styles.serviceDescription}>{service.description}</p>
                   </div>
                 ))}
@@ -255,7 +268,7 @@ export default function Retail() {
       {/* FAQ Section */}
       <FAQ faqs={faqData} title="Retail App Development FAQs" />
 
-      {/* Final CTA Section - FIXED WITH STOCK IMAGE */}
+      {/* Final CTA Section */}
       <section className={styles.finalCTA}>
         <div className={styles.container}>
           <div className={styles.finalCTAContent}>

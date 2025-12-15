@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from '../IndustryPage.module.css';
 
@@ -156,8 +158,19 @@ export default function Fintech() {
     }
   ];
 
+  const seoData = pageSEO.fintech;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries/fintech"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['fintech']} />
 
       {/* Comprehensive Services Section */}
@@ -165,9 +178,9 @@ export default function Fintech() {
         <div className={styles.container}>
           <div className={styles.comprehensiveGrid}>
             <div className={styles.comprehensiveLeft}>
-              <h2 className={styles.comprehensiveTitle}>
+              <h1 className={styles.comprehensiveTitle}>
                 Comprehensive <span className={styles.orange}>Fintech App Development</span> Services
-              </h2>
+              </h1>
               <p className={styles.comprehensiveDescription}>
                 We create secure, compliant, and innovative fintech solutions that transform financial services. Our platforms combine cutting-edge technology, bank-grade security, and regulatory compliance to deliver digital banking, payments, investments, and blockchain solutions that meet the highest industry standards and user expectations.
               </p>
@@ -185,7 +198,7 @@ export default function Fintech() {
               <div className={styles.servicesScroll}>
                 {comprehensiveServices.map((service, index) => (
                   <div key={index} className={styles.serviceCard}>
-                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                    <h2 className={styles.serviceTitle}>{service.title}</h2>
                     <p className={styles.serviceDescription}>{service.description}</p>
                   </div>
                 ))}
@@ -257,7 +270,7 @@ export default function Fintech() {
       {/* FAQ Section */}
       <FAQ faqs={faqData} title="Fintech App Development FAQs" />
 
-      {/* Final CTA Section - FIXED WITH STOCK IMAGE */}
+      {/* Final CTA Section */}
       <section className={styles.finalCTA}>
         <div className={styles.container}>
           <div className={styles.finalCTAContent}>

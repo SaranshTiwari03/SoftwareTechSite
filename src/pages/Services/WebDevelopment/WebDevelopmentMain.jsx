@@ -2,7 +2,10 @@ import React from "react";
 import ConsultationBanner from "../../../components/ConsultationBanner/ConsultationBanner";
 import Stats from "../../../components/Stats/Stats";
 import FAQ from "../../../components/FAQ/FAQ";
+import SEO from "../../../components/SEO/SEO";
 import { allBanners } from "../../../data/allBannersData";
+import { pageSEO } from "../../../data/seoData";
+
 export default function WebDevelopmentMain() {
   const statsData = [
     { number: "200+", label: "Websites", sublabel: "Delivered" },
@@ -60,8 +63,19 @@ export default function WebDevelopmentMain() {
     },
   ];
 
+  const seoData = pageSEO.webDevelopmentMain;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/web-development"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners["web-development"]} />
       <Stats data={statsData} />
 
@@ -70,7 +84,7 @@ export default function WebDevelopmentMain() {
         <div
           style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}
         >
-          <h2
+          <h1
             style={{
               fontSize: "3rem",
               marginBottom: "1rem",
@@ -81,7 +95,7 @@ export default function WebDevelopmentMain() {
             }}
           >
             What You Get From Our Web Development Services
-          </h2>
+          </h1>
           <p
             style={{
               textAlign: "center",
@@ -157,7 +171,7 @@ export default function WebDevelopmentMain() {
                 <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>
                   {feature.icon}
                 </div>
-                <h3
+                <h2
                   style={{
                     color: "var(--primary)",
                     marginBottom: "0.8rem",
@@ -167,7 +181,7 @@ export default function WebDevelopmentMain() {
                   }}
                 >
                   {feature.title}
-                </h3>
+                </h2>
                 <p
                   style={{
                     color: "#5a6576",

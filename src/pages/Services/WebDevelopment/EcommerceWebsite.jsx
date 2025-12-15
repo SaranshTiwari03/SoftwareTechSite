@@ -2,7 +2,10 @@ import React from "react";
 import ConsultationBanner from "../../../components/ConsultationBanner/ConsultationBanner";
 import Stats from "../../../components/Stats/Stats";
 import FAQ from "../../../components/FAQ/FAQ";
+import SEO from "../../../components/SEO/SEO";
 import { allBanners } from "../../../data/allBannersData";
+import { pageSEO } from "../../../data/seoData";
+
 export default function EcommerceWebsite() {
   const statsData = [
     { number: "500+", label: "Ecommerce", sublabel: "Sites Built" },
@@ -60,8 +63,19 @@ export default function EcommerceWebsite() {
     },
   ];
 
+  const seoData = pageSEO.ecommerceWebsite;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/web-development/ecommerce"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners["ecommerce-website"]} />
       <Stats data={statsData} />
 
@@ -70,7 +84,7 @@ export default function EcommerceWebsite() {
         <div
           style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}
         >
-          <h2
+          <h1
             style={{
               fontSize: "3rem",
               marginBottom: "1rem",
@@ -81,7 +95,7 @@ export default function EcommerceWebsite() {
             }}
           >
             We Build On Your Favorite Platforms
-          </h2>
+          </h1>
           <p
             style={{
               textAlign: "center",
@@ -131,7 +145,7 @@ export default function EcommerceWebsite() {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                <h3
+                <h2
                   style={{
                     fontSize: "1.8rem",
                     marginBottom: "1rem",
@@ -141,7 +155,7 @@ export default function EcommerceWebsite() {
                   }}
                 >
                   {platform.name}
-                </h3>
+                </h2>
                 <p
                   style={{
                     color: "#6b7280",

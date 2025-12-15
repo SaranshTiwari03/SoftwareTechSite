@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig, PricingConfig } from '../../../theme/theme';
 import styles from './CustomSoftware.module.css';
 
@@ -50,17 +52,28 @@ export default function CMSSolution() {
     }
   ];
 
+  const seoData = pageSEO.cmsSolution;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/custom-software/cms"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['cms-solution']} />
 
       {/* Section 1: Features Grid - WHITE */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for CMS Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               Build powerful, user-friendly CMS platforms that simplify content management
             </p>
@@ -68,8 +81,8 @@ export default function CMSSolution() {
 
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
-              <div className={styles.featureCardIcon}>✍️</div>
-              <h3 className={styles.featureCardTitle}>Intuitive Content Editor</h3>
+              <div className={styles.featureCardIcon}>✏️</div>
+              <h2 className={styles.featureCardTitle}>Intuitive Content Editor</h2>
               <p className={styles.featureCardDescription}>
                 Easy-to-use WYSIWYG editor for creating and formatting content without technical knowledge
               </p>
@@ -77,7 +90,7 @@ export default function CMSSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📁</div>
-              <h3 className={styles.featureCardTitle}>Media Management</h3>
+              <h2 className={styles.featureCardTitle}>Media Management</h2>
               <p className={styles.featureCardDescription}>
                 Organize, upload, and manage images, videos, documents, and other digital assets
               </p>
@@ -85,15 +98,15 @@ export default function CMSSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🌍</div>
-              <h3 className={styles.featureCardTitle}>Multi-Language Support</h3>
+              <h2 className={styles.featureCardTitle}>Multi-Language Support</h2>
               <p className={styles.featureCardDescription}>
                 Manage content in multiple languages for global audiences with translation workflows
               </p>
             </div>
 
             <div className={styles.featureCard}>
-              <div className={styles.featureCardIcon}>🔒</div>
-              <h3 className={styles.featureCardTitle}>Role-Based Access</h3>
+              <div className={styles.featureCardIcon}>🔑</div>
+              <h2 className={styles.featureCardTitle}>Role-Based Access</h2>
               <p className={styles.featureCardDescription}>
                 Control who can create, edit, publish, and delete content with granular permissions
               </p>
@@ -101,7 +114,7 @@ export default function CMSSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📱</div>
-              <h3 className={styles.featureCardTitle}>Responsive Design</h3>
+              <h2 className={styles.featureCardTitle}>Responsive Design</h2>
               <p className={styles.featureCardDescription}>
                 Mobile-friendly CMS interface and content that looks great on all devices
               </p>
@@ -109,7 +122,7 @@ export default function CMSSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🔍</div>
-              <h3 className={styles.featureCardTitle}>SEO Optimization</h3>
+              <h2 className={styles.featureCardTitle}>SEO Optimization</h2>
               <p className={styles.featureCardDescription}>
                 Built-in SEO tools for meta tags, URLs, sitemaps, and search engine visibility
               </p>

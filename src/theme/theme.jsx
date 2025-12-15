@@ -27,6 +27,29 @@ const theme = {
 
 export default theme;
 
+// SITE CONFIGURATION
+// ⚠️ IMPORTANT: Update these values for your actual website
+export const SiteConfig = {
+  url: 'https://yourwebsite.com',           // ⚠️ Replace with your actual domain
+  name: 'YourWebsite',                      // Site name for browser
+  domain: 'yourwebsite.com',                // Domain name only
+  logo: '/logo.png',                        // Logo path (in public folder)
+  logoAlt: 'Company Logo',                  // Logo alt text
+  favicon: '/favicon.ico',                  // Favicon path
+  ogImage: '/images/og-default.jpg',        // Default Open Graph image
+  twitterHandle: '@yourcompany',            // Twitter handle
+  locale: 'en_US',                          // Default locale
+  
+  // Social Media Links (for footer & structured data)
+  social: {
+    linkedin: 'https://www.linkedin.com/company/yourcompany',
+    twitter: 'https://twitter.com/yourcompany',
+    facebook: 'https://www.facebook.com/yourcompany',
+    instagram: 'https://www.instagram.com/yourcompany',
+    youtube: 'https://www.youtube.com/yourcompany'
+  }
+};
+
 // COMPANY CONFIGURATION
 export const CompanyConfig = {
   name: 'TekRevol',
@@ -34,7 +57,22 @@ export const CompanyConfig = {
   email: 'info@yourcompany.com',
   phone: '+1 234 567 8900',
   address: '123 Business Street, City, State 12345',
-  logo: '../assets/logo.png'
+  country: 'United States',
+  city: 'New York',
+  state: 'NY',
+  zipCode: '12345',
+  
+  // Business Hours
+  hours: {
+    weekdays: 'Mon - Fri: 9:00 AM - 6:00 PM',
+    weekend: 'Sat - Sun: Closed',
+    timezone: 'EST'
+  },
+  
+  // Legal
+  foundedYear: '2020',
+  registrationNumber: 'REG123456789',    // Company registration number
+  taxId: 'TAX123456789'                   // Tax ID if needed
 };
 
 // PRICING CONFIGURATION
@@ -74,36 +112,12 @@ export const PricingConfig = {
       range: '1,000 - 20,000',
       hourly: '300 - 1,000',
       monthly: '10,000 - 1,00,000'
-    },
-    // COMMENTED OUT - Future use
-    // ai: {
-    //   starting: '15,000',
-    //   range: '15,000 - 150,000',
-    //   hourly: '80 - 200'
-    // },
-    // blockchain: {
-    //   starting: '25,000',
-    //   range: '25,000 - 250,000',
-    //   hourly: '100 - 250'
-    // },
-    // gameDevelopment: {
-    //   starting: '30,000',
-    //   range: '30,000 - 300,000',
-    //   hourly: '70 - 180'
-    // },
-    // staffAugmentation: {
-    //   hourly: '25 - 150',
-    //   monthly: '4,000 - 20,000'
-    // }
+    }
   },
 
   // Sub-Services Pricing
   subServices: {
     // Mobile App Development
-    // ios: {
-    //   starting: '12,000',
-    //   range: '12,000 - 120,000'
-    // },
     android: {
       starting: '10,000',
       range: '10,000 - 1,00,000'

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from '../IndustryPage.module.css';
 
@@ -152,8 +154,19 @@ export default function Healthcare() {
     }
   ];
 
+  const seoData = pageSEO.healthcare;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries/healthcare"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['healthcare']} />
 
       {/* Comprehensive Services Section */}
@@ -161,9 +174,9 @@ export default function Healthcare() {
         <div className={styles.container}>
           <div className={styles.comprehensiveGrid}>
             <div className={styles.comprehensiveLeft}>
-              <h2 className={styles.comprehensiveTitle}>
+              <h1 className={styles.comprehensiveTitle}>
                 Comprehensive <span className={styles.orange}>Healthcare App Development</span> Services
-              </h2>
+              </h1>
               <p className={styles.comprehensiveDescription}>
                 We deliver cutting-edge healthcare software solutions that transform patient care delivery and streamline medical operations. Our HIPAA-compliant applications integrate seamlessly with existing healthcare infrastructure while providing intuitive experiences for patients, providers, and administrators. From telemedicine to hospital management, we build secure, scalable solutions that improve healthcare outcomes.
               </p>
@@ -181,7 +194,7 @@ export default function Healthcare() {
               <div className={styles.servicesScroll}>
                 {comprehensiveServices.map((service, index) => (
                   <div key={index} className={styles.serviceCard}>
-                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                    <h2 className={styles.serviceTitle}>{service.title}</h2>
                     <p className={styles.serviceDescription}>{service.description}</p>
                   </div>
                 ))}
@@ -253,7 +266,7 @@ export default function Healthcare() {
       {/* FAQ Section */}
       <FAQ faqs={faqData} title="Healthcare App Development FAQs" />
 
-      {/* Final CTA Section - FIXED WITH STOCK IMAGE */}
+      {/* Final CTA Section */}
       <section className={styles.finalCTA}>
         <div className={styles.container}>
           <div className={styles.finalCTAContent}>

@@ -2,7 +2,9 @@ import React from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import Stats from '../../../components/Stats/Stats';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 
 export default function WebPortals() {
   const statsData = [
@@ -58,8 +60,19 @@ export default function WebPortals() {
     }
   ];
 
+  const seoData = pageSEO.webPortals;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/web-development/portals"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['web-portals']} />
       
       <Stats data={statsData} />
@@ -67,7 +80,7 @@ export default function WebPortals() {
       {/* Portal Types Section */}
       <section style={{ padding: '5rem 0', background: 'white' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
-          <h2 style={{ 
+          <h1 style={{ 
             fontSize: '3rem', 
             marginBottom: '3rem', 
             textAlign: 'center',
@@ -76,7 +89,7 @@ export default function WebPortals() {
             fontWeight: '700'
           }}>
             Types of Web Portals We Build
-          </h2>
+          </h1>
           
           <div style={{ 
             display: 'grid', 
@@ -105,12 +118,12 @@ export default function WebPortals() {
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'scale(1)';
               }}>
-                <h3 style={{ 
+                <h2 style={{ 
                   fontSize: '1.5rem', 
                   marginBottom: '1rem',
                   fontFamily: 'var(--font-family)',
                   fontWeight: '700'
-                }}>{portal.title}</h3>
+                }}>{portal.title}</h2>
                 <p style={{ 
                   opacity: 0.95,
                   fontFamily: 'var(--font-family)',

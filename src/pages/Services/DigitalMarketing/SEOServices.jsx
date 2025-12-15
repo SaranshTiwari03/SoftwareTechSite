@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './DigitalMarketing.module.css';
 
@@ -11,7 +13,7 @@ export default function SEOServices() {
 
   const features = [
     {
-      icon: '🔍',
+      icon: '🔎',
       title: 'Keyword Research',
       description: 'In-depth keyword analysis to identify high-value opportunities that drive qualified traffic to your website.'
     },
@@ -162,15 +164,26 @@ export default function SEOServices() {
     }
   ];
 
+  const seoData = pageSEO.seoServices;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/marketing/seo"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['seo-services']} />
 
       {/* Features Section */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Comprehensive SEO Services</h2>
+            <h1 className={styles.sectionTitle}>Comprehensive SEO Services</h1>
             <p className={styles.sectionSubtitle}>
               Everything you need to rank higher, drive more traffic, and grow your business
             </p>
@@ -180,7 +193,7 @@ export default function SEOServices() {
             {features.map((feature, index) => (
               <div key={index} className={styles.featureCard}>
                 <div className={styles.featureIcon}>{feature.icon}</div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <h2 className={styles.featureTitle}>{feature.title}</h2>
                 <p className={styles.featureDescription}>{feature.description}</p>
               </div>
             ))}

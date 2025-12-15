@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './CloudServices.module.css';
 
@@ -158,8 +160,19 @@ export default function CloudServicesMain() {
     }
   };
 
+  const seoData = pageSEO.cloudServicesMain;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/cloud"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['cloud-services-main']} />
 
       {/* Why Choose Us Section */}
@@ -168,9 +181,9 @@ export default function CloudServicesMain() {
           <div className={styles.whyChooseGrid}>
             {/* Left: Tabs */}
             <div className={styles.tabsColumn}>
-              <h2 className={styles.sectionTitle}>
+              <h1 className={styles.sectionTitle}>
                 Why Choose {CompanyConfig.name} for Cloud Services?
-              </h2>
+              </h1>
               <p className={styles.sectionSubtitle}>
                 We deliver enterprise-grade cloud solutions that drive business growth and innovation.
               </p>
@@ -217,7 +230,7 @@ export default function CloudServicesMain() {
             {/* Right: Content */}
             <div className={styles.contentColumn}>
               <div className={styles.tabContent}>
-                <h3 className={styles.contentTitle}>{tabContent[activeTab].title}</h3>
+                <h2 className={styles.contentTitle}>{tabContent[activeTab].title}</h2>
                 <p className={styles.contentDescription}>{tabContent[activeTab].description}</p>
                 
                 <ul className={styles.featuresList}>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import styles from '../TechnologyPage.module.css';
 
 export default function Python() {
@@ -99,17 +101,28 @@ export default function Python() {
     }
   ];
 
+  const seoData = pageSEO.python;
+
   return (
     <div className={styles.techPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/python"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['python']} />
 
       {/* Why Hire Section - NOW FIRST */}
       <section className={styles.whyHireSection}>
         <div className={styles.whyHireContainer}>
-          <h2 className={styles.whyHireTitle}>
+          <h1 className={styles.whyHireTitle}>
             Hire Python Developers For Scalable Applications
-          </h2>
+          </h1>
           <p className={styles.whyHireSubtitle}>
             Our expert developers leverage Python's powerful capabilities for web development, CMS, portals, and machine learning to build intelligent applications that solve complex business challenges and drive innovation.
           </p>

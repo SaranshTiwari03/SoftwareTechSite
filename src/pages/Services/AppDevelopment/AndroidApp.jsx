@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig, PricingConfig } from '../../../theme/theme';
 import styles from './MobileAppDev.module.css';
 
@@ -50,17 +52,28 @@ export default function AndroidApp() {
     }
   ];
 
+  const seoData = pageSEO.androidApp;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/mobile-app/android"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['android-app']} />
 
       {/* Section 1: Features Grid - WHITE */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for Android Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               Build robust, scalable Android applications that reach billions of users worldwide
             </p>
@@ -69,7 +82,7 @@ export default function AndroidApp() {
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>⚡</div>
-              <h3 className={styles.featureCardTitle}>High Performance</h3>
+              <h2 className={styles.featureCardTitle}>High Performance</h2>
               <p className={styles.featureCardDescription}>
                 Optimized apps that run smoothly on all Android devices with minimal resource usage
               </p>
@@ -77,7 +90,7 @@ export default function AndroidApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🎨</div>
-              <h3 className={styles.featureCardTitle}>Material Design</h3>
+              <h2 className={styles.featureCardTitle}>Material Design</h2>
               <p className={styles.featureCardDescription}>
                 Beautiful, intuitive interfaces following Google's Material Design guidelines
               </p>
@@ -85,7 +98,7 @@ export default function AndroidApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🔒</div>
-              <h3 className={styles.featureCardTitle}>Enterprise Security</h3>
+              <h2 className={styles.featureCardTitle}>Enterprise Security</h2>
               <p className={styles.featureCardDescription}>
                 Bank-level security with encryption, secure authentication, and data protection
               </p>
@@ -93,7 +106,7 @@ export default function AndroidApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📱</div>
-              <h3 className={styles.featureCardTitle}>Device Compatibility</h3>
+              <h2 className={styles.featureCardTitle}>Device Compatibility</h2>
               <p className={styles.featureCardDescription}>
                 Apps that work seamlessly across all Android versions and device sizes
               </p>
@@ -101,7 +114,7 @@ export default function AndroidApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🔄</div>
-              <h3 className={styles.featureCardTitle}>Easy Maintenance</h3>
+              <h2 className={styles.featureCardTitle}>Easy Maintenance</h2>
               <p className={styles.featureCardDescription}>
                 Clean, modular code architecture for easy updates and feature additions
               </p>
@@ -109,7 +122,7 @@ export default function AndroidApp() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📊</div>
-              <h3 className={styles.featureCardTitle}>Analytics Integration</h3>
+              <h2 className={styles.featureCardTitle}>Analytics Integration</h2>
               <p className={styles.featureCardDescription}>
                 Built-in analytics to track user behavior and app performance metrics
               </p>

@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import styles from './MainTechnologies.module.css';
 
 // Using proper tech icons - these will render as images
@@ -202,15 +204,25 @@ export default function MainTechnologies() {
     }
   ];
 
+  const seoData = pageSEO.technologiesMain;
+
   return (
     <div className={styles.technologiesPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies"
+        ogType="website"
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['technologies']} />
 
       {/* Languages Section */}
       <section className={styles.techSection}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Languages</h2>
+          <h1 className={styles.sectionTitle}>Languages</h1>
           <div className={styles.techGrid}>
             {languages.map((tech, index) => {
               const IconComponent = tech.Icon;
@@ -219,7 +231,7 @@ export default function MainTechnologies() {
                   <div className={styles.techIcon}>
                     <IconComponent />
                   </div>
-                  <h3 className={styles.techName}>{tech.name}</h3>
+                  <h2 className={styles.techName}>{tech.name}</h2>
                   <p className={styles.techDescription}>{tech.description}</p>
                   <span className={styles.techArrow}>→</span>
                 </Link>

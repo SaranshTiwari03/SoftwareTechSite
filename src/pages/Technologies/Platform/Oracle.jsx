@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from '../PlatformPage.module.css';
 
@@ -84,15 +86,17 @@ export default function Oracle() {
       answer: "Oracle Autonomous Database uses machine learning to automate database management tasks including tuning, patching, upgrading, and backup. It eliminates manual database administration, reduces costs, and improves reliability with self-driving, self-securing, and self-repairing capabilities."
     },
     {
-      question: "What are the costs of Oracle implementation?",
-      answer: "Implementation costs vary based on scope and services:",
+      question: "What are the benefits of Oracle Autonomous Database?",
+      answer: "Oracle Autonomous Database offers revolutionary advantages:",
       points: [
-        "Database setup: $10,000 - $30,000",
-        "Cloud migration: $25,000 - $80,000",
-        "ERP implementation: $100,000 - $500,000+",
-        "Managed services: $3,000 - $15,000/month"
+        "Self-driving: Automates database tuning, patching, and upgrades",
+        "Self-securing: Automatically applies security updates and protects against threats",
+        "Self-repairing: Prevents downtime with automated failure detection and recovery",
+        "Reduced operational costs by eliminating manual database administration",
+        "Improved performance with machine learning-based optimization",
+        "99.995% availability SLA with built-in high availability"
       ],
-      closing: "We provide detailed cost analysis based on your requirements."
+      closing: "We help you leverage these capabilities for maximum efficiency and reliability."
     },
     {
       question: "Do you provide Oracle database optimization?",
@@ -100,8 +104,19 @@ export default function Oracle() {
     }
   ];
 
+  const seoData = pageSEO.oracle;
+
   return (
     <div className={styles.platformPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/oracle"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['oracle']} />
 
@@ -110,9 +125,9 @@ export default function Oracle() {
         <div className={styles.connectContainer}>
           <div className={styles.connectGrid}>
             <div className={styles.connectLeft}>
-              <h2 className={styles.connectTitle}>
+              <h1 className={styles.connectTitle}>
                 Oracle Cloud & Database Services For Enterprise Excellence
-              </h2>
+              </h1>
             </div>
             <div className={styles.connectRight}>
               <p className={styles.connectDescription}>

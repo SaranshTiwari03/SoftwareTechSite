@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { Link } from 'react-router-dom';
 import styles from '../IndustryPage.module.css';
 
@@ -33,32 +35,32 @@ export default function Education() {
 
   const innovationFeatures = [
     {
-      icon: '✔',
+      icon: '✓',
       title: 'Interactive Content',
       description: 'Engaging multimedia lessons with videos, quizzes, and interactive exercises.'
     },
     {
-      icon: '✔',
+      icon: '✓',
       title: 'Live Classes',
       description: 'Real-time virtual classrooms with video conferencing and collaboration tools.'
     },
     {
-      icon: '✔',
+      icon: '✓',
       title: 'Progress Tracking',
       description: 'Comprehensive analytics and reporting on student performance and engagement.'
     },
     {
-      icon: '✔',
+      icon: '✓',
       title: 'Gamification',
       description: 'Badges, leaderboards, and rewards to motivate and engage learners.'
     },
     {
-      icon: '✔',
+      icon: '✓',
       title: 'Assessment Tools',
       description: 'Automated quizzes, assignments, and grading with instant feedback.'
     },
     {
-      icon: '✔',
+      icon: '✓',
       title: 'Social Learning',
       description: 'Discussion forums, peer collaboration, and community features.'
     }
@@ -152,8 +154,19 @@ export default function Education() {
     }
   ];
 
+  const seoData = pageSEO.education;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/industries/education"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['education']} />
 
       {/* Comprehensive Services Section */}
@@ -161,9 +174,9 @@ export default function Education() {
         <div className={styles.container}>
           <div className={styles.comprehensiveGrid}>
             <div className={styles.comprehensiveLeft}>
-              <h2 className={styles.comprehensiveTitle}>
+              <h1 className={styles.comprehensiveTitle}>
                 Comprehensive <span className={styles.orange}>Education App Development</span> Services
-              </h2>
+              </h1>
               <p className={styles.comprehensiveDescription}>
                 We create innovative EdTech solutions that transform traditional learning into engaging digital experiences. Our educational platforms combine cutting-edge technology with pedagogical best practices to deliver effective, accessible, and scalable learning solutions for students, educators, and institutions worldwide.
               </p>
@@ -181,7 +194,7 @@ export default function Education() {
               <div className={styles.servicesScroll}>
                 {comprehensiveServices.map((service, index) => (
                   <div key={index} className={styles.serviceCard}>
-                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                    <h2 className={styles.serviceTitle}>{service.title}</h2>
                     <p className={styles.serviceDescription}>{service.description}</p>
                   </div>
                 ))}

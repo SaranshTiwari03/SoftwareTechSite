@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './MobileAppDev.module.css';
 
@@ -75,17 +77,28 @@ export default function MobileAppMain() {
     }
   ];
 
+  const seoData = pageSEO.mobileAppMain;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/mobile-app"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['mobile-app-main']} />
 
       {/* Section 1: Why Choose Us - WHITE with Tabs */}
       <section className={styles.whyChooseSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for Mobile App Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               We combine cutting-edge technology with innovative design to create mobile applications that drive business growth and deliver exceptional user experiences.
             </p>
@@ -127,7 +140,7 @@ export default function MobileAppMain() {
             <div className={styles.tabContent}>
               {activeTab === 'native' && (
                 <div className={styles.tabPane}>
-                  <h3 className={styles.tabTitle}>Native App Development Excellence</h3>
+                  <h2 className={styles.tabTitle}>Native App Development Excellence</h2>
                   <p className={styles.tabDescription}>
                     Build powerful, high-performance applications optimized for specific platforms. Our native development approach ensures maximum performance, seamless integration with device features, and superior user experience.
                   </p>
@@ -166,7 +179,7 @@ export default function MobileAppMain() {
 
               {activeTab === 'cross' && (
                 <div className={styles.tabPane}>
-                  <h3 className={styles.tabTitle}>Cross-Platform Solutions</h3>
+                  <h2 className={styles.tabTitle}>Cross-Platform Solutions</h2>
                   <p className={styles.tabDescription}>
                     Develop once, deploy everywhere. Our cross-platform approach using React Native and Flutter allows you to reach both Android and iOS users with a single codebase, reducing development time and costs.
                   </p>
@@ -181,22 +194,22 @@ export default function MobileAppMain() {
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Single Codebase</strong>
-                        <p>Write once, deploy to both platforms</p>
-                      </div>
-                    </li>
-                    <li>
-                      <span className={styles.checkIcon}>✓</span>
-                      <div>
                         <strong>Cost-Effective</strong>
-                        <p>Save development time and resources</p>
+                        <p>Single codebase for multiple platforms saves time and money</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Faster Time-to-Market</strong>
-                        <p>Launch on multiple platforms simultaneously</p>
+                        <strong>Faster Development</strong>
+                        <p>Quick iterations and shorter time-to-market</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span className={styles.checkIcon}>✓</span>
+                      <div>
+                        <strong>Consistent Experience</strong>
+                        <p>Uniform UI/UX across all platforms</p>
                       </div>
                     </li>
                   </ul>
@@ -205,37 +218,37 @@ export default function MobileAppMain() {
 
               {activeTab === 'expertise' && (
                 <div className={styles.tabPane}>
-                  <h3 className={styles.tabTitle}>Our Mobile Development Expertise</h3>
+                  <h2 className={styles.tabTitle}>Our Mobile Development Expertise</h2>
                   <p className={styles.tabDescription}>
-                    With years of experience building mobile apps across industries, our team brings deep technical knowledge and best practices to every project. We stay current with the latest technologies and trends.
+                    With years of experience and hundreds of successful projects, our team delivers mobile applications that exceed expectations. We stay updated with the latest technologies and best practices.
                   </p>
                   <ul className={styles.featureList}>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Industry Experience</strong>
-                        <p>Healthcare, fintech, e-commerce, and more</p>
+                        <strong>100+ Apps Delivered</strong>
+                        <p>Proven track record across multiple industries</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Modern Technologies</strong>
-                        <p>Latest frameworks, tools, and methodologies</p>
+                        <strong>Expert Team</strong>
+                        <p>Certified developers with deep platform knowledge</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>UI/UX Design</strong>
-                        <p>Beautiful, intuitive interfaces that users love</p>
+                        <strong>Agile Methodology</strong>
+                        <p>Transparent development with regular updates</p>
                       </div>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
                       <div>
-                        <strong>Quality Assurance</strong>
-                        <p>Rigorous testing across devices and scenarios</p>
+                        <strong>Full-Cycle Support</strong>
+                        <p>From concept to launch and beyond</p>
                       </div>
                     </li>
                   </ul>

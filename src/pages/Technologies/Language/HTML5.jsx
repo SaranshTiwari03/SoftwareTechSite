@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from '../TechnologyPage.module.css';
 
@@ -86,22 +88,33 @@ export default function HTML5() {
       answer: "Yes, all our HTML5 websites are fully responsive and mobile-first. We use modern CSS frameworks, flexbox, grid layouts, and media queries to ensure your website looks perfect on all devices and screen sizes."
     },
     {
-      question: "What is the cost of HTML5 website development?",
-      answer: "Costs vary based on project complexity, features, and requirements. Simple websites start from $3,000, while complex web applications can range from $15,000 to $50,000+. We provide detailed quotes after understanding your specific needs."
+      question: "What makes HTML5 better for Progressive Web Apps (PWAs)?",
+      answer: "HTML5 is the foundation for building powerful Progressive Web Apps that combine the best of web and mobile applications. HTML5 provides offline capabilities through service workers, app-like experience with responsive design, fast loading with optimized caching, push notifications for user engagement, and installation on home screens without app stores. We build PWAs that work seamlessly across all devices and platforms."
     }
   ];
 
+  const seoData = pageSEO.html5;
+
   return (
     <div className={styles.techPage}>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/technologies/html5"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       {/* Banner Section */}
       <ConsultationBanner data={allBanners['html5']} />
 
       {/* Why Hire Section - FIRST */}
       <section className={styles.whyHireSection}>
         <div className={styles.whyHireContainer}>
-          <h2 className={styles.whyHireTitle}>
+          <h1 className={styles.whyHireTitle}>
             Hire HTML5 Developers For Scalable Applications
-          </h2>
+          </h1>
           <p className={styles.whyHireSubtitle}>
             Our expert developers build robust and diverse applications including web apps and SaaS platforms, ensuring high-quality, standards-compliant solutions that deliver exceptional user experiences across all devices.
           </p>

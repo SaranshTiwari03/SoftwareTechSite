@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig } from '../../../theme/theme';
 import styles from './CloudServices.module.css';
 
@@ -191,55 +193,50 @@ export default function CloudSupportMaintenance() {
 
   const faqData = [
     {
-      question: 'What is included in cloud support and maintenance?',
+      question: 'What does cloud support and maintenance include?',
       answer: 'Our cloud support and maintenance services include:',
       points: [
-        '24/7 monitoring and alerting',
+        '24/7 infrastructure monitoring and alerting',
         'Performance optimization and tuning',
-        'Security patch management',
-        'Backup and disaster recovery',
-        'Cost optimization recommendations',
-        'Technical support via multiple channels',
-        'Regular health checks and audits',
-        'Incident management and resolution'
+        'Security patch management and updates',
+        'Automated backup and disaster recovery',
+        'Cost optimization and resource management',
+        'Incident response and troubleshooting',
+        'Regular health checks and reporting',
+        'Capacity planning and scaling recommendations'
       ],
-      closing: 'Specific services depend on the support package you choose.'
-    },
-    {
-      question: 'What support levels do you offer?',
-      answer: 'We offer three support levels to match different business needs:',
-      points: [
-        'Basic Support: Business hours coverage with 4-hour response time',
-        'Professional Support: 24/7 availability with 1-hour response time and dedicated engineer',
-        'Enterprise Support: Premium 24/7/365 support with 15-minute response and dedicated team'
-      ],
-      closing: 'Each level can be customized based on your specific infrastructure and requirements.'
+      closing: 'Support levels can be customized based on your specific needs and SLA requirements.'
     },
     {
       question: 'What are your response times?',
-      answer: 'Response times vary by support package:',
+      answer: 'Response times vary by support level:',
       points: [
         'Basic Support: 4-hour response time during business hours',
-        'Professional Support: 1-hour response time, 24/7',
-        'Enterprise Support: 15-minute response time for critical issues, 24/7/365'
+        'Professional Support: 1-hour response time with 24/7 availability',
+        'Enterprise Support: 15-minute response time for critical issues with dedicated team'
       ],
-      closing: 'All packages include faster response times for critical, business-impacting issues.'
+      closing: 'All support levels include escalation procedures for critical incidents.'
     },
     {
-      question: 'Do you support all cloud platforms?',
-      answer: 'Yes, we provide support for all major cloud platforms including AWS, Microsoft Azure, Google Cloud Platform, Oracle Cloud, and IBM Cloud. Our team includes certified engineers for each platform, ensuring expert support regardless of your cloud provider. We also support multi-cloud and hybrid cloud environments.'
+      question: 'Can you support multi-cloud environments?',
+      answer: 'Yes, we have expertise across all major cloud platforms including AWS, Azure, Google Cloud, Oracle Cloud, and SAP Cloud. We can manage hybrid and multi-cloud environments, helping you optimize across platforms and maintain consistent security and performance standards.'
     },
     {
-      question: 'Can you help optimize our cloud costs?',
-      answer: 'Absolutely. Cost optimization is a key part of our support services. We regularly analyze your cloud usage, identify cost-saving opportunities, and provide actionable recommendations. This includes right-sizing resources, leveraging reserved instances, implementing auto-scaling, and eliminating waste. Many clients save 20-40% on cloud costs within the first few months.'
+      question: 'How do you handle security and compliance?',
+      answer: 'Security and compliance are core to our support services. We provide:',
+      points: [
+        'Regular security audits and vulnerability assessments',
+        'Automated patch management for OS and applications',
+        'Compliance monitoring for GDPR, HIPAA, SOC 2, etc.',
+        'Security incident response and remediation',
+        'Access control and identity management',
+        'Encryption and data protection',
+        'Regular compliance reporting'
+      ]
     },
     {
-      question: 'What happens if there is a critical outage?',
-      answer: 'For critical outages, we follow an established incident response procedure. Our team is immediately alerted, and we mobilize resources to diagnose and resolve the issue. For Professional and Enterprise support packages, we provide 24/7 emergency response with dedicated escalation paths. We also conduct post-incident reviews to prevent similar issues in the future.'
-    },
-    {
-      question: 'Can we upgrade or downgrade our support package?',
-      answer: 'Yes, our support packages are flexible. You can upgrade or downgrade your support level based on your changing needs. We recommend starting with a package that matches your current requirements and adjusting as your cloud infrastructure grows or your needs evolve.'
+      question: 'What if we need support outside business hours?',
+      answer: 'Our Professional and Enterprise support packages include 24/7 availability. Even with Basic Support, we offer emergency support escalation for critical issues. We have global teams ensuring someone is always available when you need help.'
     },
     {
       question: 'Do you provide training for our team?',
@@ -247,15 +244,26 @@ export default function CloudSupportMaintenance() {
     }
   ];
 
+  const seoData = pageSEO.cloudSupportMaintenance;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/cloud/support"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['cloud-support']} />
 
       {/* Support Services Section */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Comprehensive Cloud Support Services</h2>
+            <h1 className={styles.sectionTitle}>Comprehensive Cloud Support Services</h1>
             <p className={styles.sectionSubtitle}>
               Keep your cloud infrastructure running smoothly with our expert support and maintenance
             </p>
@@ -265,7 +273,7 @@ export default function CloudSupportMaintenance() {
             {supportServices.map((service, index) => (
               <div key={index} className={styles.featureCard}>
                 <div className={styles.featureIcon}>{service.icon}</div>
-                <h3 className={styles.featureTitle}>{service.title}</h3>
+                <h2 className={styles.featureTitle}>{service.title}</h2>
                 <p className={styles.featureDescription}>{service.description}</p>
               </div>
             ))}

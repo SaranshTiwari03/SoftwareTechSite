@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import styles from './MainService.module.css';
 
 export default function MainService() {
@@ -20,7 +22,7 @@ export default function MainService() {
     },
     { 
       name: 'Custom Software Development', 
-      path: '/services/software',
+      path: '/services/custom-software',
       description: 'Develop bespoke software solutions that streamline operations and drive digital transformation.'
     },
     // COMMENTED OUT - Future use
@@ -88,17 +90,17 @@ export default function MainService() {
     },
     { 
       name: 'ERP Solution', 
-      path: '/services/software/erp',
+      path: '/services/custom-software/erp',
       description: 'Integrate business processes with comprehensive enterprise resource planning systems.'
     },
     { 
       name: 'CRM Solution', 
-      path: '/services/software/crm',
+      path: '/services/custom-software/crm',
       description: 'Manage customer relationships effectively with custom CRM platforms.'
     },
     { 
       name: 'CMS Solution', 
-      path: '/services/software/cms',
+      path: '/services/custom-software/cms',
       description: 'Empower your content team with flexible and user-friendly content management systems.'
     },
     // COMMENTED OUT - AI services for future use
@@ -235,89 +237,101 @@ export default function MainService() {
     }
   ];
 
+  const seoData = pageSEO.mainServices;
+
   return (
-    <div className={styles.mainServicePage}>
-      {/* Hero Section with Form */}
-      <ConsultationBanner data={allBanners['services']} />
+    <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services"
+        ogType="website"
+      />
 
-      {/* Services Section */}
-      <section className={styles.servicesSection}>
-        <div className={styles.servicesContainer}>
-          
-          {/* Primary Services */}
-          <div className={styles.categoryBlock}>
-            <div className={styles.categoryHeader}>
-              <h2 className={styles.categoryTitle}>Primary Services</h2>
-              <p className={styles.categoryDescription}>
-                Comprehensive technology solutions to transform your business
-              </p>
+      <article className={styles.mainServicePage}>
+        {/* Hero Section with Form */}
+        <ConsultationBanner data={allBanners['services']} />
+
+        {/* Services Section */}
+        <section className={styles.servicesSection}>
+          <div className={styles.servicesContainer}>
+            
+            {/* Primary Services */}
+            <div className={styles.categoryBlock}>
+              <header className={styles.categoryHeader}>
+                <h1 className={styles.categoryTitle}>Primary Services</h1>
+                <p className={styles.categoryDescription}>
+                  Comprehensive technology solutions to transform your business
+                </p>
+              </header>
+              <nav className={styles.servicesGrid} aria-label="Primary services">
+                {primaryServices.map((service, index) => (
+                  <Link key={index} to={service.path} className={styles.serviceCard}>
+                    <div className={styles.cardContent}>
+                      <h2 className={styles.serviceName}>{service.name}</h2>
+                      <p className={styles.serviceDescription}>{service.description}</p>
+                    </div>
+                    <div className={styles.cardArrow}>
+                      <span className={styles.arrow} aria-hidden="true">→</span>
+                    </div>
+                  </Link>
+                ))}
+              </nav>
             </div>
-            <div className={styles.servicesGrid}>
-              {primaryServices.map((service, index) => (
-                <Link key={index} to={service.path} className={styles.serviceCard}>
-                  <div className={styles.cardContent}>
-                    <h3 className={styles.serviceName}>{service.name}</h3>
-                    <p className={styles.serviceDescription}>{service.description}</p>
-                  </div>
-                  <div className={styles.cardArrow}>
-                    <span className={styles.arrow}>→</span>
-                  </div>
-                </Link>
-              ))}
+
+            {/* Consulting Services */}
+            <div className={styles.categoryBlock}>
+              <header className={styles.categoryHeader}>
+                <h2 className={styles.categoryTitle}>Consulting Services</h2>
+                <p className={styles.categoryDescription}>
+                  Specialized expertise for your specific technology needs
+                </p>
+              </header>
+              <nav className={styles.servicesGrid} aria-label="Consulting services">
+                {consultingServices.map((service, index) => (
+                  <Link key={index} to={service.path} className={styles.serviceCard}>
+                    <div className={styles.cardContent}>
+                      <h3 className={styles.serviceName}>{service.name}</h3>
+                      <p className={styles.serviceDescription}>{service.description}</p>
+                    </div>
+                    <div className={styles.cardArrow}>
+                      <span className={styles.arrow} aria-hidden="true">→</span>
+                    </div>
+                  </Link>
+                ))}
+              </nav>
             </div>
+
+            {/* Trending Services - COMMENTED OUT FOR FUTURE USE */}
+            {/* <div className={styles.categoryBlock}>
+              <div className={styles.categoryHeader}>
+                <h2 className={styles.categoryTitle}>Trending Services</h2>
+                <p className={styles.categoryDescription}>
+                  Next-generation technologies shaping the future
+                </p>
+              </div>
+              <div className={styles.servicesGrid}>
+                {trendingServices.map((service, index) => (
+                  <Link key={index} to={service.path} className={styles.serviceCard}>
+                    <div className={styles.cardContent}>
+                      <h3 className={styles.serviceName}>{service.name}</h3>
+                      <p className={styles.serviceDescription}>{service.description}</p>
+                    </div>
+                    <div className={styles.cardArrow}>
+                      <span className={styles.arrow}>→</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div> */}
+
           </div>
+        </section>
 
-          {/* Consulting Services */}
-          <div className={styles.categoryBlock}>
-            <div className={styles.categoryHeader}>
-              <h2 className={styles.categoryTitle}>Consulting Services</h2>
-              <p className={styles.categoryDescription}>
-                Specialized expertise for your specific technology needs
-              </p>
-            </div>
-            <div className={styles.servicesGrid}>
-              {consultingServices.map((service, index) => (
-                <Link key={index} to={service.path} className={styles.serviceCard}>
-                  <div className={styles.cardContent}>
-                    <h3 className={styles.serviceName}>{service.name}</h3>
-                    <p className={styles.serviceDescription}>{service.description}</p>
-                  </div>
-                  <div className={styles.cardArrow}>
-                    <span className={styles.arrow}>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Trending Services - COMMENTED OUT FOR FUTURE USE */}
-          {/* <div className={styles.categoryBlock}>
-            <div className={styles.categoryHeader}>
-              <h2 className={styles.categoryTitle}>Trending Services</h2>
-              <p className={styles.categoryDescription}>
-                Next-generation technologies shaping the future
-              </p>
-            </div>
-            <div className={styles.servicesGrid}>
-              {trendingServices.map((service, index) => (
-                <Link key={index} to={service.path} className={styles.serviceCard}>
-                  <div className={styles.cardContent}>
-                    <h3 className={styles.serviceName}>{service.name}</h3>
-                    <p className={styles.serviceDescription}>{service.description}</p>
-                  </div>
-                  <div className={styles.cardArrow}>
-                    <span className={styles.arrow}>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div> */}
-
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <FAQ faqs={faqData} title="Frequently Asked Questions" />
-    </div>
+        {/* FAQ Section */}
+        <FAQ faqs={faqData} title="Frequently Asked Questions" />
+      </article>
+    </>
   );
 }

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import ConsultationBanner from '../../../components/ConsultationBanner/ConsultationBanner';
 import FAQ from '../../../components/FAQ/FAQ';
 import ScheduleCallModal from '../../../components/ScheduleCallModal/ScheduleCallModal';
+import SEO from '../../../components/SEO/SEO';
 import { allBanners } from '../../../data/allBannersData';
+import { pageSEO } from '../../../data/seoData';
 import { CompanyConfig, PricingConfig } from '../../../theme/theme';
 import styles from './CustomSoftware.module.css';
 
@@ -53,17 +55,28 @@ export default function ERPSolution() {
     }
   ];
 
+  const seoData = pageSEO.erpSolution;
+
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl="/services/custom-software/erp"
+        ogType="website"
+        structuredData={seoData.structuredData}
+      />
+
       <ConsultationBanner data={allBanners['erp-solution']} />
 
       {/* Section 1: Features Grid - WHITE */}
       <section className={styles.featuresSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
+            <h1 className={styles.sectionTitle}>
               Why Choose <span className={styles.highlight}>{companyName}</span> for ERP Development?
-            </h2>
+            </h1>
             <p className={styles.sectionSubtitle}>
               Build comprehensive ERP systems that unify all your business processes
             </p>
@@ -72,7 +85,7 @@ export default function ERPSolution() {
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>💰</div>
-              <h3 className={styles.featureCardTitle}>Financial Management</h3>
+              <h2 className={styles.featureCardTitle}>Financial Management</h2>
               <p className={styles.featureCardDescription}>
                 Complete accounting, billing, invoicing, and financial reporting in one integrated system
               </p>
@@ -80,7 +93,7 @@ export default function ERPSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📦</div>
-              <h3 className={styles.featureCardTitle}>Inventory Control</h3>
+              <h2 className={styles.featureCardTitle}>Inventory Control</h2>
               <p className={styles.featureCardDescription}>
                 Real-time inventory tracking, warehouse management, and stock optimization
               </p>
@@ -88,7 +101,7 @@ export default function ERPSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🏭</div>
-              <h3 className={styles.featureCardTitle}>Manufacturing Management</h3>
+              <h2 className={styles.featureCardTitle}>Manufacturing Management</h2>
               <p className={styles.featureCardDescription}>
                 Production planning, quality control, and manufacturing operations management
               </p>
@@ -96,7 +109,7 @@ export default function ERPSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>👥</div>
-              <h3 className={styles.featureCardTitle}>HR & Payroll</h3>
+              <h2 className={styles.featureCardTitle}>HR & Payroll</h2>
               <p className={styles.featureCardDescription}>
                 Employee management, attendance tracking, payroll processing, and performance reviews
               </p>
@@ -104,7 +117,7 @@ export default function ERPSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>🚚</div>
-              <h3 className={styles.featureCardTitle}>Supply Chain Management</h3>
+              <h2 className={styles.featureCardTitle}>Supply Chain Management</h2>
               <p className={styles.featureCardDescription}>
                 End-to-end supply chain visibility from procurement to delivery
               </p>
@@ -112,7 +125,7 @@ export default function ERPSolution() {
 
             <div className={styles.featureCard}>
               <div className={styles.featureCardIcon}>📊</div>
-              <h3 className={styles.featureCardTitle}>Business Intelligence</h3>
+              <h2 className={styles.featureCardTitle}>Business Intelligence</h2>
               <p className={styles.featureCardDescription}>
                 Advanced analytics, dashboards, and reporting for data-driven decisions
               </p>
