@@ -128,7 +128,7 @@ export const allBanners = {
       { label: "Schedule Call", type: "secondary", icon: "phone" },
     ],
     backgroundType: "gradient",
-    backgroundColor: "#3DDC84",
+    backgroundColor: "#1976D2", // Changed to Material Blue (Android's official color)
     backgroundImage: "",
     bannerImage: "",
     bannerImageAlt: "Android app development services",

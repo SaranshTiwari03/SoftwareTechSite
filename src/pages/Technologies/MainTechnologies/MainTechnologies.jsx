@@ -204,22 +204,21 @@ export default function MainTechnologies() {
     }
   ];
 
-  const seoData = pageSEO.technologiesMain;
+  // ✅ SAFE FIX (prevents undefined crash)
+  const seoData = pageSEO?.technologiesMain || {};
 
   return (
     <div className={styles.technologiesPage}>
       <SEO 
-        title={seoData.title}
-        description={seoData.description}
-        keywords={seoData.keywords}
+        title={seoData.title || "Technologies"}
+        description={seoData.description || ""}
+        keywords={seoData.keywords || ""}
         canonicalUrl="/technologies"
         ogType="website"
       />
 
-      {/* Banner Section */}
       <ConsultationBanner data={allBanners['technologies']} />
 
-      {/* Languages Section */}
       <section className={styles.techSection}>
         <div className={styles.container}>
           <h1 className={styles.sectionTitle}>Languages</h1>
@@ -241,7 +240,6 @@ export default function MainTechnologies() {
         </div>
       </section>
 
-      {/* Platforms Section */}
       <section className={styles.techSection} style={{ background: '#f8f9fa' }}>
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Platforms</h2>
@@ -263,7 +261,6 @@ export default function MainTechnologies() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <FAQ faqs={faqData} title="Technology FAQs" />
     </div>
   );
