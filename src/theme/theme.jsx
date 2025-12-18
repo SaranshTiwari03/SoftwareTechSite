@@ -53,7 +53,7 @@ export const SiteConfig = {
 // COMPANY CONFIGURATION
 export const CompanyConfig = {
   name: 'Kapivik',
-  tagline: 'Transforming Ideas into Digital Reality',
+  tagline: 'Transforming Ideas into Digital Reality.',
   email: 'info@yourcompany.com',
   phone: '+1 234 567 8900',
   address: '123 Business Street, City, State 12345',
