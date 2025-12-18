@@ -31,7 +31,7 @@ export default theme;
 // ⚠️ IMPORTANT: Update these values for your actual website
 export const SiteConfig = {
   url: 'https://yourwebsite.com',           // ⚠️ Replace with your actual domain
-  name: 'YourWebsite',                      // Site name for browser
+  name: 'Kapivik',                      // Site name for browser
   domain: 'yourwebsite.com',                // Domain name only
   logo: '/logo.png',                        // Logo path (in public folder)
   logoAlt: 'Company Logo',                  // Logo alt text
@@ -52,7 +52,7 @@ export const SiteConfig = {
 
 // COMPANY CONFIGURATION
 export const CompanyConfig = {
-  name: 'TekRevol',
+  name: 'Kapivik',
   tagline: 'Transforming Ideas into Digital Reality',
   email: 'info@yourcompany.com',
   phone: '+1 234 567 8900',
